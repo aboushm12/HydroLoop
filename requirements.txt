@@ -1,0 +1,8 @@
+streamlit>=1.45
+plotly>=5.20
+pandas>=2.0,<3.0
+numpy>=1.24
+openpyxl>=3.1
+fpdf2>=2.7
+pytest>=7.0
+# psychrolib is optional: a vendored copy (PsychroLib 2.5.0, MIT) is used if it is not installed

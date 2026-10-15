@@ -1,0 +1,5349 @@
+{
+ "Conservative": {
+  "days": 365.0,
+  "condensate_L": 6384.056045525362,
+  "condensate_to_reactor_L": 1540.3632336562785,
+  "reactor_demand_L": 1540.3632336562785,
+  "external_L": 0.0,
+  "coverage_pct": 100.0,
+  "overflow_L": 4826.373915988284,
+  "media_evap_L": 4740.154923924183,
+  "media_drain_L": 86.21899206410114,
+  "spill_L": 0.0,
+  "mean_T_cond_before": 28.78448116438356,
+  "mean_T_cond_after": 28.253952903224747,
+  "mean_dT_cond_active": 0.5305282611588125,
+  "hvac_before_kWh": 9947.479207348359,
+  "hvac_gross_saving_kWh": 88.35754905528665,
+  "hvac_saving_carnot_kWh": 160.06300175873665,
+  "fan_penalty_kWh": 98.51666501273516,
+  "hvac_net_saving_kWh": -10.159115957448506,
+  "pbr_only_kWh": 61.82057142857143,
+  "control_kWh": 21.9,
+  "pbr_kWh": 83.72057142857142,
+  "net_electricity_kWh": -93.87968738601992,
+  "biomass_produced_g": 72.67650117088414,
+  "biomass_harvested_g": 76.296244482201,
+  "vol_productivity_g_L_d": 0.009955685091901936,
+  "areal_productivity_g_m2_d": 0.39822740367607745,
+  "co2_supplied_g": 1572.9851035042143,
+  "co2_transferable_g": 550.544786226475,
+  "co2_gross_uptake_g": 204.56909501173868,
+  "co2_carbon_method_g": 133.1454558333794,
+  "co2_stoich_method_g": 136.63182220126217,
+  "co2_diff_pct": 2.551650348882312,
+  "o2_stoich_g": 134.74303440745393,
+  "o2_pq_g": 131.65779913719481,
+  "o2_diff_pct": 2.289717820165437,
+  "o2_L": 104.47965816519826,
+  "cue_pct": 8.464508375620651,
+  "carbon_in_biomass_g": 36.33825058544207,
+  "net_electricity_co2_kg": -53.323662435259315,
+  "bg11_chem_g": 2500.324432000005,
+  "cooling_L": 0.0,
+  "net_SAR": -30.041499963526377,
+  "elec_SAR": -3.250917106383522,
+  "opex_SAR": 26.790582857142855,
+  "allowable_capex": 0.0,
+  "bio_limit": "Carbon Limited",
+  "bio_share": 0.5828767123287671,
+  "bio_shares": {
+   "Carbon": 0.5828767123287671,
+   "Temperature": 0.35547945205479453,
+   "Light": 0.040639269406392696,
+   "Max growth rate": 0.021004566210045664
+  },
+  "flags": [
+   [
+    "Evaporative Cooling Limited",
+    "water quantity limits the media in 93% of active hours"
+   ],
+   [
+    "Energy Limited",
+    "net electricity impact -94 kWh (system uses more than it saves)"
+   ],
+   [
+    "Cost Limited",
+    "net annual benefit -30 SAR <= 0"
+   ]
+  ],
+  "validation": [
+   {
+    "target": "T1 Condensate covers 100% of daily reactor need + 20% margin",
+    "status": "Pass",
+    "value": "100.0% of days meet it; overall coverage 100.0%",
+    "basis": "Simulated (Validation Target, not a guaranteed result)"
+   },
+   {
+    "target": "T2 Growth in conditioned condensate >= 80% of control",
+    "status": "Warning",
+    "value": "Not evaluable by simulation - requires the paired flask/panel experiment",
+    "basis": "Experiment required"
+   },
+   {
+    "target": "T3 Reactor temperature within 25-35 C for >= 90% of time",
+    "status": "Fail",
+    "value": "45.3% of hours (max 48.0 C)",
+    "basis": "Simulated with Low-confidence thermal inputs (alpha, U)"
+   },
+   {
+    "target": "T4a No persistent decline in algae density (model)",
+    "status": "Fail",
+    "value": "longest run of declining days = 11 (after a 14-day start-up)",
+    "basis": "Simulated"
+   },
+   {
+    "target": "T4b No visible contamination",
+    "status": "Warning",
+    "value": "Not evaluable by simulation - requires observation/microscopy",
+    "basis": "Experiment required"
+   }
+  ],
+  "health_counts": {
+   "Warning": 357,
+   "Critical": 8
+  },
+  "Tr_max": 48.00874630835532,
+  "Tr_in_range": 0.45251141552511415,
+  "X_end": 0.038627343846712264,
+  "X_mean": 0.04360218688413677,
+  "hyd": {
+   "Q_Lph": 68.30330565132695,
+   "static_bar": 0.0977723005,
+   "v_t": 4.428690551393267,
+   "h_net": 0.9871957650489294,
+   "v_o": 2.6841503022037716,
+   "h_loss": 0.01280423495107059
+  },
+  "mean_overflow_Lph": 0.7421765209885106,
+  "conf": [
+   {
+    "output": "Condensate recovered",
+    "value": 6384.056,
+    "unit": "L",
+    "confidence": "Low",
+    "measure_first": "Outdoor-air fraction at coil inlet; Indoor (return) relative humidity; Load model: balance temperature (RTF = min_rtf); Load model: minimum runtime fraction"
+   },
+   {
+    "output": "Water used in reactor (from condensate)",
+    "value": 1540.363,
+    "unit": "L",
+    "confidence": "Low",
+    "measure_first": "Outdoor-air fraction at coil inlet; Indoor (return) relative humidity; Load model: balance temperature (RTF = min_rtf); Load model: minimum runtime fraction"
+   },
+   {
+    "output": "Overflow reused for condenser cooling (evaporated)",
+    "value": 4740.155,
+    "unit": "L",
+    "confidence": "Low",
+    "measure_first": "Outdoor-air fraction at coil inlet; Indoor (return) relative humidity; Load model: balance temperature (RTF = min_rtf); Load model: minimum runtime fraction"
+   },
+   {
+    "output": "Biomass produced",
+    "value": 72.677,
+    "unit": "g",
+    "confidence": "Low",
+    "measure_first": "Biomass-specific light absorption coefficient; Fraction of photons above the validated PPFD credited to growth; Panel solar absorptance (thermal); Heat-loss coefficient per face"
+   },
+   {
+    "output": "Gross Biological CO2 Fixation",
+    "value": 133.145,
+    "unit": "g CO2",
+    "confidence": "Low",
+    "measure_first": "Biomass-specific light absorption coefficient; Fraction of photons above the validated PPFD credited to growth; Panel solar absorptance (thermal); Heat-loss coefficient per face"
+   },
+   {
+    "output": "Gross O2 produced (stoichiometric)",
+    "value": 134.743,
+    "unit": "g O2",
+    "confidence": "Low",
+    "measure_first": "Biomass-specific light absorption coefficient; Fraction of photons above the validated PPFD credited to growth; Panel solar absorptance (thermal); Heat-loss coefficient per face"
+   },
+   {
+    "output": "Condenser inlet air drop (mean, AC on)",
+    "value": 0.531,
+    "unit": "K",
+    "confidence": "Low",
+    "measure_first": "Outdoor-air fraction at coil inlet; Indoor (return) relative humidity; Load model: balance temperature (RTF = min_rtf); Load model: minimum runtime fraction"
+   },
+   {
+    "output": "HVAC electricity saved (gross)",
+    "value": 88.358,
+    "unit": "kWh",
+    "confidence": "Low",
+    "measure_first": "Outdoor-air fraction at coil inlet; Indoor (return) relative humidity; Load model: balance temperature (RTF = min_rtf); Load model: minimum runtime fraction"
+   },
+   {
+    "output": "PBR + control electricity",
+    "value": 83.721,
+    "unit": "kWh",
+    "confidence": "Low",
+    "measure_first": "Small pump wire-to-water efficiency"
+   },
+   {
+    "output": "Net electricity impact",
+    "value": -93.88,
+    "unit": "kWh",
+    "confidence": "Low",
+    "measure_first": "Outdoor-air fraction at coil inlet; Indoor (return) relative humidity; Load model: balance temperature (RTF = min_rtf); Load model: minimum runtime fraction"
+   },
+   {
+    "output": "Net annual benefit",
+    "value": -30.041,
+    "unit": "SAR/yr",
+    "confidence": "Low",
+    "measure_first": "Outdoor-air fraction at coil inlet; Indoor (return) relative humidity; Load model: balance temperature (RTF = min_rtf); Load model: minimum runtime fraction"
+   },
+   {
+    "output": "Net Carbon Impact",
+    "value": null,
+    "unit": "kg CO2e",
+    "confidence": "Not Yet Quantified",
+    "measure_first": "embodied carbon of equipment, nutrients, maintenance, lifetime"
+   }
+  ],
+  "monthly": [
+   {
+    "month": 1,
+    "T": 23.438,
+    "RH": 62.869,
+    "dT_psy": 5.153,
+    "condensate_L": 278.879,
+    "overflow_L": 131.838,
+    "media_evap_L": 131.838,
+    "dT_cond_active": 0.214,
+    "hvac_saving_kWh": 2.094,
+    "fan_kWh": 6.327,
+    "pbr_kWh": 5.251,
+    "ctrl_kWh": 1.86,
+    "T_r_max": 42.273,
+    "net_biomass_g": 5.124,
+    "hours": 744
+   },
+   {
+    "month": 2,
+    "T": 24.008,
+    "RH": 63.215,
+    "dT_psy": 5.215,
+    "condensate_L": 270.716,
+    "overflow_L": 152.661,
+    "media_evap_L": 152.661,
+    "dT_cond_active": 0.272,
+    "hvac_saving_kWh": 2.457,
+    "fan_kWh": 5.911,
+    "pbr_kWh": 4.742,
+    "ctrl_kWh": 1.68,
+    "T_r_max": 42.071,
+    "net_biomass_g": 7.726,
+    "hours": 672
+   },
+   {
+    "month": 3,
+    "T": 25.533,
+    "RH": 63.489,
+    "dT_psy": 5.399,
+    "condensate_L": 359.887,
+    "overflow_L": 228.996,
+    "media_evap_L": 228.996,
+    "dT_cond_active": 0.358,
+    "hvac_saving_kWh": 3.789,
+    "fan_kWh": 7.126,
+    "pbr_kWh": 5.251,
+    "ctrl_kWh": 1.86,
+    "T_r_max": 41.485,
+    "net_biomass_g": 8.184,
+    "hours": 744
+   },
+   {
+    "month": 4,
+    "T": 28.226,
+    "RH": 60.301,
+    "dT_psy": 6.251,
+    "condensate_L": 446.103,
+    "overflow_L": 319.102,
+    "media_evap_L": 319.102,
+    "dT_cond_active": 0.469,
+    "hvac_saving_kWh": 5.628,
+    "fan_kWh": 7.891,
+    "pbr_kWh": 5.081,
+    "ctrl_kWh": 1.8,
+    "T_r_max": 41.54,
+    "net_biomass_g": 7.522,
+    "hours": 720
+   },
+   {
+    "month": 5,
+    "T": 30.611,
+    "RH": 59.327,
+    "dT_psy": 6.756,
+    "condensate_L": 581.72,
+    "overflow_L": 451.06,
+    "media_evap_L": 451.06,
+    "dT_cond_active": 0.586,
+    "hvac_saving_kWh": 8.471,
+    "fan_kWh": 9.064,
+    "pbr_kWh": 5.251,
+    "ctrl_kWh": 1.86,
+    "T_r_max": 41.641,
+    "net_biomass_g": 7.891,
+    "hours": 744
+   },
+   {
+    "month": 6,
+    "T": 31.597,
+    "RH": 61.589,
+    "dT_psy": 6.511,
+    "condensate_L": 645.97,
+    "overflow_L": 519.485,
+    "media_evap_L": 519.485,
+    "dT_cond_active": 0.673,
+    "hvac_saving_kWh": 10.016,
+    "fan_kWh": 9.136,
+    "pbr_kWh": 5.081,
+    "ctrl_kWh": 1.8,
+    "T_r_max": 42.423,
+    "net_biomass_g": 7.279,
+    "hours": 720
+   },
+   {
+    "month": 7,
+    "T": 33.072,
+    "RH": 55.941,
+    "dT_psy": 7.701,
+    "condensate_L": 700.734,
+    "overflow_L": 569.423,
+    "media_evap_L": 569.423,
+    "dT_cond_active": 0.676,
+    "hvac_saving_kWh": 11.412,
+    "fan_kWh": 10.003,
+    "pbr_kWh": 5.251,
+    "ctrl_kWh": 1.86,
+    "T_r_max": 43.506,
+    "net_biomass_g": 5.993,
+    "hours": 744
+   },
+   {
+    "month": 8,
+    "T": 33.284,
+    "RH": 61.561,
+    "dT_psy": 6.584,
+    "condensate_L": 798.192,
+    "overflow_L": 667.069,
+    "media_evap_L": 667.069,
+    "dT_cond_active": 0.784,
+    "hvac_saving_kWh": 13.344,
+    "fan_kWh": 10.084,
+    "pbr_kWh": 5.251,
+    "ctrl_kWh": 1.86,
+    "T_r_max": 44.626,
+    "net_biomass_g": 4.922,
+    "hours": 744
+   },
+   {
+    "month": 9,
+    "T": 31.984,
+    "RH": 69.951,
+    "dT_psy": 4.966,
+    "condensate_L": 777.898,
+    "overflow_L": 651.253,
+    "media_evap_L": 614.927,
+    "dT_cond_active": 0.774,
+    "hvac_saving_kWh": 11.937,
+    "fan_kWh": 9.279,
+    "pbr_kWh": 5.081,
+    "ctrl_kWh": 1.8,
+    "T_r_max": 45.962,
+    "net_biomass_g": 3.854,
+    "hours": 720
+   },
+   {
+    "month": 10,
+    "T": 30.38,
+    "RH": 69.677,
+    "dT_psy": 4.952,
+    "condensate_L": 675.074,
+    "overflow_L": 543.684,
+    "media_evap_L": 498.089,
+    "dT_cond_active": 0.639,
+    "hvac_saving_kWh": 9.367,
+    "fan_kWh": 8.976,
+    "pbr_kWh": 5.251,
+    "ctrl_kWh": 1.86,
+    "T_r_max": 48.009,
+    "net_biomass_g": 3.809,
+    "hours": 744
+   },
+   {
+    "month": 11,
+    "T": 27.723,
+    "RH": 68.145,
+    "dT_psy": 4.869,
+    "condensate_L": 483.964,
+    "overflow_L": 357.03,
+    "media_evap_L": 352.732,
+    "dT_cond_active": 0.531,
+    "hvac_saving_kWh": 6.058,
+    "fan_kWh": 7.705,
+    "pbr_kWh": 5.081,
+    "ctrl_kWh": 1.8,
+    "T_r_max": 46.662,
+    "net_biomass_g": 4.015,
+    "hours": 720
+   },
+   {
+    "month": 12,
+    "T": 25.238,
+    "RH": 65.951,
+    "dT_psy": 4.917,
+    "condensate_L": 364.918,
+    "overflow_L": 234.773,
+    "media_evap_L": 234.773,
+    "dT_cond_active": 0.376,
+    "hvac_saving_kWh": 3.786,
+    "fan_kWh": 7.014,
+    "pbr_kWh": 5.251,
+    "ctrl_kWh": 1.86,
+    "T_r_max": 44.459,
+    "net_biomass_g": 6.358,
+    "hours": 744
+   }
+  ]
+ },
+ "Reference": {
+  "days": 365.0,
+  "condensate_L": 15049.4839569835,
+  "condensate_to_reactor_L": 1540.3632336562785,
+  "reactor_demand_L": 1540.3632336562785,
+  "external_L": 0.0,
+  "coverage_pct": 100.0,
+  "overflow_L": 13491.120723327222,
+  "media_evap_L": 12573.506609850321,
+  "media_drain_L": 917.6141134769006,
+  "spill_L": 0.0,
+  "mean_T_cond_before": 28.78448116438356,
+  "mean_T_cond_after": 27.332813268412934,
+  "mean_dT_cond_active": 1.4516678959706262,
+  "hvac_before_kWh": 9947.479207348359,
+  "hvac_gross_saving_kWh": 230.0400541576637,
+  "hvac_saving_carnot_kWh": 423.9735354443467,
+  "fan_penalty_kWh": 98.51666501273516,
+  "hvac_net_saving_kWh": 131.52338914492853,
+  "pbr_only_kWh": 61.82057142857143,
+  "control_kWh": 21.9,
+  "pbr_kWh": 83.72057142857142,
+  "net_electricity_kWh": 47.802817716357104,
+  "biomass_produced_g": 72.69856529573228,
+  "biomass_harvested_g": 76.31519298634514,
+  "vol_productivity_g_L_d": 0.009958707574757846,
+  "areal_productivity_g_m2_d": 0.3983483029903139,
+  "co2_supplied_g": 1572.9851035042143,
+  "co2_transferable_g": 550.544786226475,
+  "co2_gross_uptake_g": 204.62622065468116,
+  "co2_carbon_method_g": 133.18587794937483,
+  "co2_stoich_method_g": 136.6733027559767,
+  "co2_diff_pct": 2.5516503488823172,
+  "o2_stoich_g": 134.78394153817277,
+  "o2_pq_g": 131.6977696100518,
+  "o2_diff_pct": 2.289717820165478,
+  "o2_L": 104.51137752681736,
+  "cue_pct": 8.467078146682399,
+  "carbon_in_biomass_g": 36.34928264786614,
+  "net_electricity_co2_kg": 27.152000462890832,
+  "bg11_chem_g": 2500.324432000005,
+  "cooling_L": 0.0,
+  "net_SAR": 15.296901669234277,
+  "elec_SAR": 42.08748452637713,
+  "opex_SAR": 26.790582857142855,
+  "allowable_capex": 76.48450834617138,
+  "bio_limit": "Carbon Limited",
+  "bio_share": 0.5828767123287671,
+  "bio_shares": {
+   "Carbon": 0.5828767123287671,
+   "Temperature": 0.3552511415525114,
+   "Light": 0.040639269406392696,
+   "Max growth rate": 0.021232876712328767
+  },
+  "flags": [
+   [
+    "Evaporative Cooling Limited",
+    "water quantity limits the media in 73% of active hours"
+   ]
+  ],
+  "validation": [
+   {
+    "target": "T1 Condensate covers 100% of daily reactor need + 20% margin",
+    "status": "Pass",
+    "value": "100.0% of days meet it; overall coverage 100.0%",
+    "basis": "Simulated (Validation Target, not a guaranteed result)"
+   },
+   {
+    "target": "T2 Growth in conditioned condensate >= 80% of control",
+    "status": "Warning",
+    "value": "Not evaluable by simulation - requires the paired flask/panel experiment",
+    "basis": "Experiment required"
+   },
+   {
+    "target": "T3 Reactor temperature within 25-35 C for >= 90% of time",
+    "status": "Fail",
+    "value": "45.3% of hours (max 48.0 C)",
+    "basis": "Simulated with Low-confidence thermal inputs (alpha, U)"
+   },
+   {
+    "target": "T4a No persistent decline in algae density (model)",
+    "status": "Fail",
+    "value": "longest run of declining days = 11 (after a 14-day start-up)",
+    "basis": "Simulated"
+   },
+   {
+    "target": "T4b No visible contamination",
+    "status": "Warning",
+    "value": "Not evaluable by simulation - requires observation/microscopy",
+    "basis": "Experiment required"
+   }
+  ],
+  "health_counts": {
+   "Warning": 357,
+   "Critical": 8
+  },
+  "Tr_max": 48.00874630835532,
+  "Tr_in_range": 0.45251141552511415,
+  "X_end": 0.03876427269940589,
+  "X_mean": 0.043612406541515936,
+  "hyd": {
+   "Q_Lph": 68.30330565132695,
+   "static_bar": 0.0977723005,
+   "v_t": 4.428690551393267,
+   "h_net": 0.9871957650489294,
+   "v_o": 2.6841503022037716,
+   "h_loss": 0.01280423495107059
+  },
+  "mean_overflow_Lph": 1.6577931584329346,
+  "conf": [
+   {
+    "output": "Condensate recovered",
+    "value": 15049.484,
+    "unit": "L",
+    "confidence": "Low",
+    "measure_first": "Outdoor-air fraction at coil inlet; Indoor (return) relative humidity; Load model: balance temperature (RTF = min_rtf); Load model: minimum runtime fraction"
+   },
+   {
+    "output": "Water used in reactor (from condensate)",
+    "value": 1540.363,
+    "unit": "L",
+    "confidence": "Low",
+    "measure_first": "Outdoor-air fraction at coil inlet; Indoor (return) relative humidity; Load model: balance temperature (RTF = min_rtf); Load model: minimum runtime fraction"
+   },
+   {
+    "output": "Overflow reused for condenser cooling (evaporated)",
+    "value": 12573.507,
+    "unit": "L",
+    "confidence": "Low",
+    "measure_first": "Outdoor-air fraction at coil inlet; Indoor (return) relative humidity; Load model: balance temperature (RTF = min_rtf); Load model: minimum runtime fraction"
+   },
+   {
+    "output": "Biomass produced",
+    "value": 72.699,
+    "unit": "g",
+    "confidence": "Low",
+    "measure_first": "Biomass-specific light absorption coefficient; Fraction of photons above the validated PPFD credited to growth; Panel solar absorptance (thermal); Heat-loss coefficient per face"
+   },
+   {
+    "output": "Gross Biological CO2 Fixation",
+    "value": 133.186,
+    "unit": "g CO2",
+    "confidence": "Low",
+    "measure_first": "Biomass-specific light absorption coefficient; Fraction of photons above the validated PPFD credited to growth; Panel solar absorptance (thermal); Heat-loss coefficient per face"
+   },
+   {
+    "output": "Gross O2 produced (stoichiometric)",
+    "value": 134.784,
+    "unit": "g O2",
+    "confidence": "Low",
+    "measure_first": "Biomass-specific light absorption coefficient; Fraction of photons above the validated PPFD credited to growth; Panel solar absorptance (thermal); Heat-loss coefficient per face"
+   },
+   {
+    "output": "Condenser inlet air drop (mean, AC on)",
+    "value": 1.452,
+    "unit": "K",
+    "confidence": "Low",
+    "measure_first": "Outdoor-air fraction at coil inlet; Indoor (return) relative humidity; Load model: balance temperature (RTF = min_rtf); Load model: minimum runtime fraction"
+   },
+   {
+    "output": "HVAC electricity saved (gross)",
+    "value": 230.04,
+    "unit": "kWh",
+    "confidence": "Low",
+    "measure_first": "Outdoor-air fraction at coil inlet; Indoor (return) relative humidity; Load model: balance temperature (RTF = min_rtf); Load model: minimum runtime fraction"
+   },
+   {
+    "output": "PBR + control electricity",
+    "value": 83.721,
+    "unit": "kWh",
+    "confidence": "Low",
+    "measure_first": "Small pump wire-to-water efficiency"
+   },
+   {
+    "output": "Net electricity impact",
+    "value": 47.803,
+    "unit": "kWh",
+    "confidence": "Low",
+    "measure_first": "Outdoor-air fraction at coil inlet; Indoor (return) relative humidity; Load model: balance temperature (RTF = min_rtf); Load model: minimum runtime fraction"
+   },
+   {
+    "output": "Net annual benefit",
+    "value": 15.297,
+    "unit": "SAR/yr",
+    "confidence": "Low",
+    "measure_first": "Outdoor-air fraction at coil inlet; Indoor (return) relative humidity; Load model: balance temperature (RTF = min_rtf); Load model: minimum runtime fraction"
+   },
+   {
+    "output": "Net Carbon Impact",
+    "value": null,
+    "unit": "kg CO2e",
+    "confidence": "Not Yet Quantified",
+    "measure_first": "embodied carbon of equipment, nutrients, maintenance, lifetime"
+   }
+  ],
+  "monthly": [
+   {
+    "month": 1,
+    "T": 23.438,
+    "RH": 62.869,
+    "dT_psy": 5.153,
+    "condensate_L": 773.496,
+    "overflow_L": 624.975,
+    "media_evap_L": 614.438,
+    "dT_cond_active": 1.125,
+    "hvac_saving_kWh": 9.084,
+    "fan_kWh": 6.327,
+    "pbr_kWh": 5.251,
+    "ctrl_kWh": 1.86,
+    "T_r_max": 42.273,
+    "net_biomass_g": 5.124,
+    "hours": 744
+   },
+   {
+    "month": 2,
+    "T": 24.008,
+    "RH": 63.215,
+    "dT_psy": 5.215,
+    "condensate_L": 742.836,
+    "overflow_L": 624.969,
+    "media_evap_L": 603.187,
+    "dT_cond_active": 1.176,
+    "hvac_saving_kWh": 9.172,
+    "fan_kWh": 5.911,
+    "pbr_kWh": 4.742,
+    "ctrl_kWh": 1.68,
+    "T_r_max": 42.071,
+    "net_biomass_g": 7.726,
+    "hours": 672
+   },
+   {
+    "month": 3,
+    "T": 25.533,
+    "RH": 63.489,
+    "dT_psy": 5.399,
+    "condensate_L": 960.29,
+    "overflow_L": 829.955,
+    "media_evap_L": 783.456,
+    "dT_cond_active": 1.263,
+    "hvac_saving_kWh": 12.621,
+    "fan_kWh": 7.126,
+    "pbr_kWh": 5.251,
+    "ctrl_kWh": 1.86,
+    "T_r_max": 41.485,
+    "net_biomass_g": 8.184,
+    "hours": 744
+   },
+   {
+    "month": 4,
+    "T": 28.226,
+    "RH": 60.301,
+    "dT_psy": 6.251,
+    "condensate_L": 1135.951,
+    "overflow_L": 1009.685,
+    "media_evap_L": 987.718,
+    "dT_cond_active": 1.468,
+    "hvac_saving_kWh": 17.174,
+    "fan_kWh": 7.891,
+    "pbr_kWh": 5.081,
+    "ctrl_kWh": 1.8,
+    "T_r_max": 41.54,
+    "net_biomass_g": 7.522,
+    "hours": 720
+   },
+   {
+    "month": 5,
+    "T": 30.611,
+    "RH": 59.327,
+    "dT_psy": 6.756,
+    "condensate_L": 1386.612,
+    "overflow_L": 1255.951,
+    "media_evap_L": 1231.001,
+    "dT_cond_active": 1.603,
+    "hvac_saving_kWh": 22.987,
+    "fan_kWh": 9.064,
+    "pbr_kWh": 5.251,
+    "ctrl_kWh": 1.86,
+    "T_r_max": 41.641,
+    "net_biomass_g": 7.891,
+    "hours": 744
+   },
+   {
+    "month": 6,
+    "T": 31.597,
+    "RH": 61.589,
+    "dT_psy": 6.511,
+    "condensate_L": 1466.405,
+    "overflow_L": 1339.921,
+    "media_evap_L": 1263.608,
+    "dT_cond_active": 1.618,
+    "hvac_saving_kWh": 24.463,
+    "fan_kWh": 9.136,
+    "pbr_kWh": 5.081,
+    "ctrl_kWh": 1.8,
+    "T_r_max": 42.423,
+    "net_biomass_g": 7.279,
+    "hours": 720
+   },
+   {
+    "month": 7,
+    "T": 33.072,
+    "RH": 55.941,
+    "dT_psy": 7.701,
+    "condensate_L": 1584.653,
+    "overflow_L": 1453.342,
+    "media_evap_L": 1453.342,
+    "dT_cond_active": 1.73,
+    "hvac_saving_kWh": 28.994,
+    "fan_kWh": 10.003,
+    "pbr_kWh": 5.251,
+    "ctrl_kWh": 1.86,
+    "T_r_max": 43.506,
+    "net_biomass_g": 5.993,
+    "hours": 744
+   },
+   {
+    "month": 8,
+    "T": 33.284,
+    "RH": 61.561,
+    "dT_psy": 6.584,
+    "condensate_L": 1709.314,
+    "overflow_L": 1578.191,
+    "media_evap_L": 1547.261,
+    "dT_cond_active": 1.813,
+    "hvac_saving_kWh": 30.969,
+    "fan_kWh": 10.084,
+    "pbr_kWh": 5.251,
+    "ctrl_kWh": 1.86,
+    "T_r_max": 44.626,
+    "net_biomass_g": 4.922,
+    "hours": 744
+   },
+   {
+    "month": 9,
+    "T": 31.984,
+    "RH": 69.951,
+    "dT_psy": 4.966,
+    "condensate_L": 1635.195,
+    "overflow_L": 1508.55,
+    "media_evap_L": 1266.006,
+    "dT_cond_active": 1.561,
+    "hvac_saving_kWh": 24.909,
+    "fan_kWh": 9.279,
+    "pbr_kWh": 5.081,
+    "ctrl_kWh": 1.8,
+    "T_r_max": 45.962,
+    "net_biomass_g": 3.854,
+    "hours": 720
+   },
+   {
+    "month": 10,
+    "T": 30.38,
+    "RH": 69.677,
+    "dT_psy": 4.952,
+    "condensate_L": 1502.064,
+    "overflow_L": 1370.675,
+    "media_evap_L": 1121.031,
+    "dT_cond_active": 1.406,
+    "hvac_saving_kWh": 21.349,
+    "fan_kWh": 8.976,
+    "pbr_kWh": 5.251,
+    "ctrl_kWh": 1.86,
+    "T_r_max": 48.009,
+    "net_biomass_g": 3.809,
+    "hours": 744
+   },
+   {
+    "month": 11,
+    "T": 27.723,
+    "RH": 68.145,
+    "dT_psy": 4.869,
+    "condensate_L": 1185.988,
+    "overflow_L": 1059.053,
+    "media_evap_L": 924.577,
+    "dT_cond_active": 1.365,
+    "hvac_saving_kWh": 15.997,
+    "fan_kWh": 7.705,
+    "pbr_kWh": 5.081,
+    "ctrl_kWh": 1.8,
+    "T_r_max": 46.662,
+    "net_biomass_g": 4.015,
+    "hours": 720
+   },
+   {
+    "month": 12,
+    "T": 25.238,
+    "RH": 65.951,
+    "dT_psy": 4.917,
+    "condensate_L": 966.679,
+    "overflow_L": 835.853,
+    "media_evap_L": 777.882,
+    "dT_cond_active": 1.27,
+    "hvac_saving_kWh": 12.319,
+    "fan_kWh": 7.014,
+    "pbr_kWh": 5.251,
+    "ctrl_kWh": 1.86,
+    "T_r_max": 44.459,
+    "net_biomass_g": 6.381,
+    "hours": 744
+   }
+  ]
+ },
+ "Optimistic": {
+  "days": 365.0,
+  "condensate_L": 20576.039060238534,
+  "condensate_to_reactor_L": 1540.3632336562785,
+  "reactor_demand_L": 1540.3632336562785,
+  "external_L": 0.0,
+  "coverage_pct": 100.0,
+  "overflow_L": 19017.675826582257,
+  "media_evap_L": 17584.170124885728,
+  "media_drain_L": 1433.5057016965266,
+  "spill_L": 0.0,
+  "mean_T_cond_before": 28.78448116438356,
+  "mean_T_cond_after": 26.745019880064405,
+  "mean_dT_cond_active": 2.03946128431916,
+  "hvac_before_kWh": 9947.479207348359,
+  "hvac_gross_saving_kWh": 320.55468813607877,
+  "hvac_saving_carnot_kWh": 592.7606631863736,
+  "fan_penalty_kWh": 98.51666501273516,
+  "hvac_net_saving_kWh": 222.0380231233436,
+  "pbr_only_kWh": 61.82057142857143,
+  "control_kWh": 21.9,
+  "pbr_kWh": 83.72057142857142,
+  "net_electricity_kWh": 138.3174516947722,
+  "biomass_produced_g": 72.70779556343315,
+  "biomass_harvested_g": 76.32294297380218,
+  "vol_productivity_g_L_d": 0.009959971994990843,
+  "areal_productivity_g_m2_d": 0.39839887979963373,
+  "co2_supplied_g": 1572.9851035042143,
+  "co2_transferable_g": 550.544786226475,
+  "co2_gross_uptake_g": 204.64993640546868,
+  "co2_carbon_method_g": 133.20278806723545,
+  "co2_stoich_method_g": 136.6906556592543,
+  "co2_diff_pct": 2.5516503488822946,
+  "o2_stoich_g": 134.8010545562511,
+  "o2_pq_g": 131.71449078830565,
+  "o2_diff_pct": 2.289717820165463,
+  "o2_L": 104.52464694951412,
+  "cue_pct": 8.46815318024902,
+  "carbon_in_biomass_g": 36.353897781716576,
+  "net_electricity_co2_kg": 78.56431256263059,
+  "bg11_chem_g": 2500.324432000005,
+  "cooling_L": 0.0,
+  "net_SAR": 44.2615845423271,
+  "elec_SAR": 71.05216739946995,
+  "opex_SAR": 26.790582857142855,
+  "allowable_capex": 221.3079227116355,
+  "bio_limit": "Carbon Limited",
+  "bio_share": 0.5828767123287671,
+  "bio_shares": {
+   "Carbon": 0.5828767123287671,
+   "Temperature": 0.34840182648401824,
+   "Light": 0.040639269406392696,
+   "Max growth rate": 0.028082191780821917
+  },
+  "flags": [
+   [
+    "Evaporative Cooling Limited",
+    "water quantity limits the media in 70% of active hours"
+   ]
+  ],
+  "validation": [
+   {
+    "target": "T1 Condensate covers 100% of daily reactor need + 20% margin",
+    "status": "Pass",
+    "value": "100.0% of days meet it; overall coverage 100.0%",
+    "basis": "Simulated (Validation Target, not a guaranteed result)"
+   },
+   {
+    "target": "T2 Growth in conditioned condensate >= 80% of control",
+    "status": "Warning",
+    "value": "Not evaluable by simulation - requires the paired flask/panel experiment",
+    "basis": "Experiment required"
+   },
+   {
+    "target": "T3 Reactor temperature within 25-35 C for >= 90% of time",
+    "status": "Fail",
+    "value": "45.3% of hours (max 48.0 C)",
+    "basis": "Simulated with Low-confidence thermal inputs (alpha, U)"
+   },
+   {
+    "target": "T4a No persistent decline in algae density (model)",
+    "status": "Fail",
+    "value": "longest run of declining days = 11 (after a 14-day start-up)",
+    "basis": "Simulated"
+   },
+   {
+    "target": "T4b No visible contamination",
+    "status": "Warning",
+    "value": "Not evaluable by simulation - requires observation/microscopy",
+    "basis": "Experiment required"
+   }
+  ],
+  "health_counts": {
+   "Warning": 356,
+   "Critical": 9
+  },
+  "Tr_max": 48.00874630835532,
+  "Tr_in_range": 0.45251141552511415,
+  "X_end": 0.03883060313163495,
+  "X_mean": 0.04361657161010801,
+  "hyd": {
+   "Q_Lph": 68.30330565132695,
+   "static_bar": 0.0977723005,
+   "v_t": 4.428690551393267,
+   "h_net": 0.9871957650489294,
+   "v_o": 2.6841503022037716,
+   "h_loss": 0.01280423495107059
+  },
+  "mean_overflow_Lph": 2.293220285371067,
+  "conf": [
+   {
+    "output": "Condensate recovered",
+    "value": 20576.039,
+    "unit": "L",
+    "confidence": "Low",
+    "measure_first": "Outdoor-air fraction at coil inlet; Indoor (return) relative humidity; Load model: balance temperature (RTF = min_rtf); Load model: minimum runtime fraction"
+   },
+   {
+    "output": "Water used in reactor (from condensate)",
+    "value": 1540.363,
+    "unit": "L",
+    "confidence": "Low",
+    "measure_first": "Outdoor-air fraction at coil inlet; Indoor (return) relative humidity; Load model: balance temperature (RTF = min_rtf); Load model: minimum runtime fraction"
+   },
+   {
+    "output": "Overflow reused for condenser cooling (evaporated)",
+    "value": 17584.17,
+    "unit": "L",
+    "confidence": "Low",
+    "measure_first": "Outdoor-air fraction at coil inlet; Indoor (return) relative humidity; Load model: balance temperature (RTF = min_rtf); Load model: minimum runtime fraction"
+   },
+   {
+    "output": "Biomass produced",
+    "value": 72.708,
+    "unit": "g",
+    "confidence": "Low",
+    "measure_first": "Biomass-specific light absorption coefficient; Fraction of photons above the validated PPFD credited to growth; Panel solar absorptance (thermal); Heat-loss coefficient per face"
+   },
+   {
+    "output": "Gross Biological CO2 Fixation",
+    "value": 133.203,
+    "unit": "g CO2",
+    "confidence": "Low",
+    "measure_first": "Biomass-specific light absorption coefficient; Fraction of photons above the validated PPFD credited to growth; Panel solar absorptance (thermal); Heat-loss coefficient per face"
+   },
+   {
+    "output": "Gross O2 produced (stoichiometric)",
+    "value": 134.801,
+    "unit": "g O2",
+    "confidence": "Low",
+    "measure_first": "Biomass-specific light absorption coefficient; Fraction of photons above the validated PPFD credited to growth; Panel solar absorptance (thermal); Heat-loss coefficient per face"
+   },
+   {
+    "output": "Condenser inlet air drop (mean, AC on)",
+    "value": 2.039,
+    "unit": "K",
+    "confidence": "Low",
+    "measure_first": "Outdoor-air fraction at coil inlet; Indoor (return) relative humidity; Load model: balance temperature (RTF = min_rtf); Load model: minimum runtime fraction"
+   },
+   {
+    "output": "HVAC electricity saved (gross)",
+    "value": 320.555,
+    "unit": "kWh",
+    "confidence": "Low",
+    "measure_first": "Outdoor-air fraction at coil inlet; Indoor (return) relative humidity; Load model: balance temperature (RTF = min_rtf); Load model: minimum runtime fraction"
+   },
+   {
+    "output": "PBR + control electricity",
+    "value": 83.721,
+    "unit": "kWh",
+    "confidence": "Low",
+    "measure_first": "Small pump wire-to-water efficiency"
+   },
+   {
+    "output": "Net electricity impact",
+    "value": 138.317,
+    "unit": "kWh",
+    "confidence": "Low",
+    "measure_first": "Outdoor-air fraction at coil inlet; Indoor (return) relative humidity; Load model: balance temperature (RTF = min_rtf); Load model: minimum runtime fraction"
+   },
+   {
+    "output": "Net annual benefit",
+    "value": 44.262,
+    "unit": "SAR/yr",
+    "confidence": "Low",
+    "measure_first": "Outdoor-air fraction at coil inlet; Indoor (return) relative humidity; Load model: balance temperature (RTF = min_rtf); Load model: minimum runtime fraction"
+   },
+   {
+    "output": "Net Carbon Impact",
+    "value": null,
+    "unit": "kg CO2e",
+    "confidence": "Not Yet Quantified",
+    "measure_first": "embodied carbon of equipment, nutrients, maintenance, lifetime"
+   }
+  ],
+  "monthly": [
+   {
+    "month": 1,
+    "T": 23.438,
+    "RH": 62.869,
+    "dT_psy": 5.153,
+    "condensate_L": 1133.558,
+    "overflow_L": 985.037,
+    "media_evap_L": 944.066,
+    "dT_cond_active": 1.727,
+    "hvac_saving_kWh": 13.935,
+    "fan_kWh": 6.327,
+    "pbr_kWh": 5.251,
+    "ctrl_kWh": 1.86,
+    "T_r_max": 42.273,
+    "net_biomass_g": 5.124,
+    "hours": 744
+   },
+   {
+    "month": 2,
+    "T": 24.008,
+    "RH": 63.215,
+    "dT_psy": 5.215,
+    "condensate_L": 1075.512,
+    "overflow_L": 957.646,
+    "media_evap_L": 898.622,
+    "dT_cond_active": 1.753,
+    "hvac_saving_kWh": 13.628,
+    "fan_kWh": 5.911,
+    "pbr_kWh": 4.742,
+    "ctrl_kWh": 1.68,
+    "T_r_max": 42.071,
+    "net_biomass_g": 7.726,
+    "hours": 672
+   },
+   {
+    "month": 3,
+    "T": 25.533,
+    "RH": 63.489,
+    "dT_psy": 5.399,
+    "condensate_L": 1350.233,
+    "overflow_L": 1219.898,
+    "media_evap_L": 1126.367,
+    "dT_cond_active": 1.819,
+    "hvac_saving_kWh": 18.094,
+    "fan_kWh": 7.126,
+    "pbr_kWh": 5.251,
+    "ctrl_kWh": 1.86,
+    "T_r_max": 41.485,
+    "net_biomass_g": 8.184,
+    "hours": 744
+   },
+   {
+    "month": 4,
+    "T": 28.226,
+    "RH": 60.301,
+    "dT_psy": 6.251,
+    "condensate_L": 1552.93,
+    "overflow_L": 1426.664,
+    "media_evap_L": 1381.727,
+    "dT_cond_active": 2.054,
+    "hvac_saving_kWh": 24.001,
+    "fan_kWh": 7.891,
+    "pbr_kWh": 5.081,
+    "ctrl_kWh": 1.8,
+    "T_r_max": 41.54,
+    "net_biomass_g": 7.522,
+    "hours": 720
+   },
+   {
+    "month": 5,
+    "T": 30.611,
+    "RH": 59.327,
+    "dT_psy": 6.756,
+    "condensate_L": 1873.608,
+    "overflow_L": 1742.948,
+    "media_evap_L": 1701.812,
+    "dT_cond_active": 2.215,
+    "hvac_saving_kWh": 31.762,
+    "fan_kWh": 9.064,
+    "pbr_kWh": 5.251,
+    "ctrl_kWh": 1.86,
+    "T_r_max": 41.641,
+    "net_biomass_g": 7.891,
+    "hours": 744
+   },
+   {
+    "month": 6,
+    "T": 31.597,
+    "RH": 61.589,
+    "dT_psy": 6.511,
+    "condensate_L": 1974.797,
+    "overflow_L": 1848.313,
+    "media_evap_L": 1735.12,
+    "dT_cond_active": 2.222,
+    "hvac_saving_kWh": 33.575,
+    "fan_kWh": 9.136,
+    "pbr_kWh": 5.081,
+    "ctrl_kWh": 1.8,
+    "T_r_max": 42.423,
+    "net_biomass_g": 7.279,
+    "hours": 720
+   },
+   {
+    "month": 7,
+    "T": 33.072,
+    "RH": 55.941,
+    "dT_psy": 7.701,
+    "condensate_L": 2123.953,
+    "overflow_L": 1992.642,
+    "media_evap_L": 1992.642,
+    "dT_cond_active": 2.373,
+    "hvac_saving_kWh": 39.716,
+    "fan_kWh": 10.003,
+    "pbr_kWh": 5.251,
+    "ctrl_kWh": 1.86,
+    "T_r_max": 43.506,
+    "net_biomass_g": 5.993,
+    "hours": 744
+   },
+   {
+    "month": 8,
+    "T": 33.284,
+    "RH": 61.561,
+    "dT_psy": 6.584,
+    "condensate_L": 2287.589,
+    "overflow_L": 2156.466,
+    "media_evap_L": 2110.48,
+    "dT_cond_active": 2.474,
+    "hvac_saving_kWh": 42.231,
+    "fan_kWh": 10.084,
+    "pbr_kWh": 5.251,
+    "ctrl_kWh": 1.86,
+    "T_r_max": 44.626,
+    "net_biomass_g": 4.922,
+    "hours": 744
+   },
+   {
+    "month": 9,
+    "T": 31.984,
+    "RH": 69.951,
+    "dT_psy": 4.966,
+    "condensate_L": 2194.099,
+    "overflow_L": 2067.454,
+    "media_evap_L": 1732.742,
+    "dT_cond_active": 2.136,
+    "hvac_saving_kWh": 34.079,
+    "fan_kWh": 9.279,
+    "pbr_kWh": 5.081,
+    "ctrl_kWh": 1.8,
+    "T_r_max": 45.962,
+    "net_biomass_g": 3.854,
+    "hours": 720
+   },
+   {
+    "month": 10,
+    "T": 30.38,
+    "RH": 69.677,
+    "dT_psy": 4.952,
+    "condensate_L": 2030.174,
+    "overflow_L": 1898.784,
+    "media_evap_L": 1547.499,
+    "dT_cond_active": 1.941,
+    "hvac_saving_kWh": 29.456,
+    "fan_kWh": 8.976,
+    "pbr_kWh": 5.251,
+    "ctrl_kWh": 1.86,
+    "T_r_max": 48.009,
+    "net_biomass_g": 3.809,
+    "hours": 744
+   },
+   {
+    "month": 11,
+    "T": 27.723,
+    "RH": 68.145,
+    "dT_psy": 4.869,
+    "condensate_L": 1620.445,
+    "overflow_L": 1493.511,
+    "media_evap_L": 1294.739,
+    "dT_cond_active": 1.911,
+    "hvac_saving_kWh": 22.396,
+    "fan_kWh": 7.705,
+    "pbr_kWh": 5.081,
+    "ctrl_kWh": 1.8,
+    "T_r_max": 46.662,
+    "net_biomass_g": 4.015,
+    "hours": 720
+   },
+   {
+    "month": 12,
+    "T": 25.238,
+    "RH": 65.951,
+    "dT_psy": 4.917,
+    "condensate_L": 1359.14,
+    "overflow_L": 1228.314,
+    "media_evap_L": 1118.355,
+    "dT_cond_active": 1.826,
+    "hvac_saving_kWh": 17.681,
+    "fan_kWh": 7.014,
+    "pbr_kWh": 5.251,
+    "ctrl_kWh": 1.86,
+    "T_r_max": 44.459,
+    "net_biomass_g": 6.39,
+    "hours": 744
+   }
+  ]
+ },
+ "Ref + CO2-enriched air 1.5%": {
+  "days": 365.0,
+  "condensate_L": 15049.4839569835,
+  "condensate_to_reactor_L": 1540.3632336562785,
+  "reactor_demand_L": 1540.3632336562785,
+  "external_L": 0.0,
+  "coverage_pct": 100.0,
+  "overflow_L": 13491.120723327222,
+  "media_evap_L": 12573.506609850321,
+  "media_drain_L": 917.6141134769006,
+  "spill_L": 0.0,
+  "mean_T_cond_before": 28.78448116438356,
+  "mean_T_cond_after": 27.332813268412934,
+  "mean_dT_cond_active": 1.4516678959706262,
+  "hvac_before_kWh": 9947.479207348359,
+  "hvac_gross_saving_kWh": 230.0400541576637,
+  "hvac_saving_carnot_kWh": 423.9735354443467,
+  "fan_penalty_kWh": 98.51666501273516,
+  "hvac_net_saving_kWh": 131.52338914492853,
+  "pbr_only_kWh": 61.82057142857143,
+  "control_kWh": 21.9,
+  "pbr_kWh": 83.72057142857142,
+  "net_electricity_kWh": 47.802817716357104,
+  "biomass_produced_g": 414.96048912685904,
+  "biomass_harvested_g": 406.849638232693,
+  "vol_productivity_g_L_d": 0.05684390262011768,
+  "areal_productivity_g_m2_d": 2.2737561048047072,
+  "co2_supplied_g": 55377.69979713009,
+  "co2_transferable_g": 19382.19492899553,
+  "co2_gross_uptake_g": 1148.1856052552716,
+  "co2_carbon_method_g": 760.21963891366,
+  "co2_stoich_method_g": 780.125719558495,
+  "co2_diff_pct": 2.551650348882316,
+  "o2_stoich_g": 769.3413216561713,
+  "o2_pq_g": 751.7255763163134,
+  "o2_diff_pct": 2.289717820165467,
+  "o2_L": 596.5467428611805,
+  "cue_pct": 1.3727902056218266,
+  "carbon_in_biomass_g": 207.48024456342952,
+  "net_electricity_co2_kg": 27.152000462890832,
+  "bg11_chem_g": 2500.324432000005,
+  "cooling_L": 0.0,
+  "net_SAR": 15.296901669234277,
+  "elec_SAR": 42.08748452637713,
+  "opex_SAR": 26.790582857142855,
+  "allowable_capex": 76.48450834617138,
+  "bio_limit": "Temperature Limited",
+  "bio_share": 0.6404109589041096,
+  "bio_shares": {
+   "Temperature": 0.6404109589041096,
+   "Phosphorus": 0.23424657534246576,
+   "Light": 0.12534246575342467
+  },
+  "flags": [
+   [
+    "Evaporative Cooling Limited",
+    "water quantity limits the media in 73% of active hours"
+   ]
+  ],
+  "validation": [
+   {
+    "target": "T1 Condensate covers 100% of daily reactor need + 20% margin",
+    "status": "Pass",
+    "value": "100.0% of days meet it; overall coverage 100.0%",
+    "basis": "Simulated (Validation Target, not a guaranteed result)"
+   },
+   {
+    "target": "T2 Growth in conditioned condensate >= 80% of control",
+    "status": "Warning",
+    "value": "Not evaluable by simulation - requires the paired flask/panel experiment",
+    "basis": "Experiment required"
+   },
+   {
+    "target": "T3 Reactor temperature within 25-35 C for >= 90% of time",
+    "status": "Fail",
+    "value": "45.3% of hours (max 48.0 C)",
+    "basis": "Simulated with Low-confidence thermal inputs (alpha, U)"
+   },
+   {
+    "target": "T4a No persistent decline in algae density (model)",
+    "status": "Fail",
+    "value": "longest run of declining days = 21 (after a 14-day start-up)",
+    "basis": "Simulated"
+   },
+   {
+    "target": "T4b No visible contamination",
+    "status": "Warning",
+    "value": "Not evaluable by simulation - requires observation/microscopy",
+    "basis": "Experiment required"
+   }
+  ],
+  "health_counts": {
+   "Warning": 365
+  },
+  "Tr_max": 48.00874630835532,
+  "Tr_in_range": 0.45251141552511415,
+  "X_end": 0.26868640699757684,
+  "X_mean": 0.2370011555892848,
+  "hyd": {
+   "Q_Lph": 68.30330565132695,
+   "static_bar": 0.0977723005,
+   "v_t": 4.428690551393267,
+   "h_net": 0.9871957650489294,
+   "v_o": 2.6841503022037716,
+   "h_loss": 0.01280423495107059
+  },
+  "mean_overflow_Lph": 1.6577931584329346,
+  "conf": [
+   {
+    "output": "Condensate recovered",
+    "value": 15049.484,
+    "unit": "L",
+    "confidence": "Low",
+    "measure_first": "Outdoor-air fraction at coil inlet; Indoor (return) relative humidity; Load model: balance temperature (RTF = min_rtf); Load model: minimum runtime fraction"
+   },
+   {
+    "output": "Water used in reactor (from condensate)",
+    "value": 1540.363,
+    "unit": "L",
+    "confidence": "Low",
+    "measure_first": "Outdoor-air fraction at coil inlet; Indoor (return) relative humidity; Load model: balance temperature (RTF = min_rtf); Load model: minimum runtime fraction"
+   },
+   {
+    "output": "Overflow reused for condenser cooling (evaporated)",
+    "value": 12573.507,
+    "unit": "L",
+    "confidence": "Low",
+    "measure_first": "Outdoor-air fraction at coil inlet; Indoor (return) relative humidity; Load model: balance temperature (RTF = min_rtf); Load model: minimum runtime fraction"
+   },
+   {
+    "output": "Biomass produced",
+    "value": 414.96,
+    "unit": "g",
+    "confidence": "Low",
+    "measure_first": "Biomass-specific light absorption coefficient; Fraction of photons above the validated PPFD credited to growth; Panel solar absorptance (thermal); Heat-loss coefficient per face"
+   },
+   {
+    "output": "Gross Biological CO2 Fixation",
+    "value": 760.22,
+    "unit": "g CO2",
+    "confidence": "Low",
+    "measure_first": "Biomass-specific light absorption coefficient; Fraction of photons above the validated PPFD credited to growth; Panel solar absorptance (thermal); Heat-loss coefficient per face"
+   },
+   {
+    "output": "Gross O2 produced (stoichiometric)",
+    "value": 769.341,
+    "unit": "g O2",
+    "confidence": "Low",
+    "measure_first": "Biomass-specific light absorption coefficient; Fraction of photons above the validated PPFD credited to growth; Panel solar absorptance (thermal); Heat-loss coefficient per face"
+   },
+   {
+    "output": "Condenser inlet air drop (mean, AC on)",
+    "value": 1.452,
+    "unit": "K",
+    "confidence": "Low",
+    "measure_first": "Outdoor-air fraction at coil inlet; Indoor (return) relative humidity; Load model: balance temperature (RTF = min_rtf); Load model: minimum runtime fraction"
+   },
+   {
+    "output": "HVAC electricity saved (gross)",
+    "value": 230.04,
+    "unit": "kWh",
+    "confidence": "Low",
+    "measure_first": "Outdoor-air fraction at coil inlet; Indoor (return) relative humidity; Load model: balance temperature (RTF = min_rtf); Load model: minimum runtime fraction"
+   },
+   {
+    "output": "PBR + control electricity",
+    "value": 83.721,
+    "unit": "kWh",
+    "confidence": "Low",
+    "measure_first": "Small pump wire-to-water efficiency"
+   },
+   {
+    "output": "Net electricity impact",
+    "value": 47.803,
+    "unit": "kWh",
+    "confidence": "Low",
+    "measure_first": "Outdoor-air fraction at coil inlet; Indoor (return) relative humidity; Load model: balance temperature (RTF = min_rtf); Load model: minimum runtime fraction"
+   },
+   {
+    "output": "Net annual benefit",
+    "value": 15.297,
+    "unit": "SAR/yr",
+    "confidence": "Low",
+    "measure_first": "Outdoor-air fraction at coil inlet; Indoor (return) relative humidity; Load model: balance temperature (RTF = min_rtf); Load model: minimum runtime fraction"
+   },
+   {
+    "output": "Net Carbon Impact",
+    "value": null,
+    "unit": "kg CO2e",
+    "confidence": "Not Yet Quantified",
+    "measure_first": "embodied carbon of equipment, nutrients, maintenance, lifetime"
+   }
+  ],
+  "monthly": [
+   {
+    "month": 1,
+    "T": 23.438,
+    "RH": 62.869,
+    "dT_psy": 5.153,
+    "condensate_L": 773.496,
+    "overflow_L": 624.975,
+    "media_evap_L": 614.438,
+    "dT_cond_active": 1.125,
+    "hvac_saving_kWh": 9.084,
+    "fan_kWh": 6.327,
+    "pbr_kWh": 5.251,
+    "ctrl_kWh": 1.86,
+    "T_r_max": 42.273,
+    "net_biomass_g": 48.419,
+    "hours": 744
+   },
+   {
+    "month": 2,
+    "T": 24.008,
+    "RH": 63.215,
+    "dT_psy": 5.215,
+    "condensate_L": 742.836,
+    "overflow_L": 624.969,
+    "media_evap_L": 603.187,
+    "dT_cond_active": 1.176,
+    "hvac_saving_kWh": 9.172,
+    "fan_kWh": 5.911,
+    "pbr_kWh": 4.742,
+    "ctrl_kWh": 1.68,
+    "T_r_max": 42.071,
+    "net_biomass_g": 39.667,
+    "hours": 672
+   },
+   {
+    "month": 3,
+    "T": 25.533,
+    "RH": 63.489,
+    "dT_psy": 5.399,
+    "condensate_L": 960.29,
+    "overflow_L": 829.955,
+    "media_evap_L": 783.456,
+    "dT_cond_active": 1.263,
+    "hvac_saving_kWh": 12.621,
+    "fan_kWh": 7.126,
+    "pbr_kWh": 5.251,
+    "ctrl_kWh": 1.86,
+    "T_r_max": 41.485,
+    "net_biomass_g": 44.036,
+    "hours": 744
+   },
+   {
+    "month": 4,
+    "T": 28.226,
+    "RH": 60.301,
+    "dT_psy": 6.251,
+    "condensate_L": 1135.951,
+    "overflow_L": 1009.685,
+    "media_evap_L": 987.718,
+    "dT_cond_active": 1.468,
+    "hvac_saving_kWh": 17.174,
+    "fan_kWh": 7.891,
+    "pbr_kWh": 5.081,
+    "ctrl_kWh": 1.8,
+    "T_r_max": 41.54,
+    "net_biomass_g": 42.83,
+    "hours": 720
+   },
+   {
+    "month": 5,
+    "T": 30.611,
+    "RH": 59.327,
+    "dT_psy": 6.756,
+    "condensate_L": 1386.612,
+    "overflow_L": 1255.951,
+    "media_evap_L": 1231.001,
+    "dT_cond_active": 1.603,
+    "hvac_saving_kWh": 22.987,
+    "fan_kWh": 9.064,
+    "pbr_kWh": 5.251,
+    "ctrl_kWh": 1.86,
+    "T_r_max": 41.641,
+    "net_biomass_g": 37.961,
+    "hours": 744
+   },
+   {
+    "month": 6,
+    "T": 31.597,
+    "RH": 61.589,
+    "dT_psy": 6.511,
+    "condensate_L": 1466.405,
+    "overflow_L": 1339.921,
+    "media_evap_L": 1263.608,
+    "dT_cond_active": 1.618,
+    "hvac_saving_kWh": 24.463,
+    "fan_kWh": 9.136,
+    "pbr_kWh": 5.081,
+    "ctrl_kWh": 1.8,
+    "T_r_max": 42.423,
+    "net_biomass_g": 29.743,
+    "hours": 720
+   },
+   {
+    "month": 7,
+    "T": 33.072,
+    "RH": 55.941,
+    "dT_psy": 7.701,
+    "condensate_L": 1584.653,
+    "overflow_L": 1453.342,
+    "media_evap_L": 1453.342,
+    "dT_cond_active": 1.73,
+    "hvac_saving_kWh": 28.994,
+    "fan_kWh": 10.003,
+    "pbr_kWh": 5.251,
+    "ctrl_kWh": 1.86,
+    "T_r_max": 43.506,
+    "net_biomass_g": 19.684,
+    "hours": 744
+   },
+   {
+    "month": 8,
+    "T": 33.284,
+    "RH": 61.561,
+    "dT_psy": 6.584,
+    "condensate_L": 1709.314,
+    "overflow_L": 1578.191,
+    "media_evap_L": 1547.261,
+    "dT_cond_active": 1.813,
+    "hvac_saving_kWh": 30.969,
+    "fan_kWh": 10.084,
+    "pbr_kWh": 5.251,
+    "ctrl_kWh": 1.86,
+    "T_r_max": 44.626,
+    "net_biomass_g": 14.811,
+    "hours": 744
+   },
+   {
+    "month": 9,
+    "T": 31.984,
+    "RH": 69.951,
+    "dT_psy": 4.966,
+    "condensate_L": 1635.195,
+    "overflow_L": 1508.55,
+    "media_evap_L": 1266.006,
+    "dT_cond_active": 1.561,
+    "hvac_saving_kWh": 24.909,
+    "fan_kWh": 9.279,
+    "pbr_kWh": 5.081,
+    "ctrl_kWh": 1.8,
+    "T_r_max": 45.962,
+    "net_biomass_g": 18.664,
+    "hours": 720
+   },
+   {
+    "month": 10,
+    "T": 30.38,
+    "RH": 69.677,
+    "dT_psy": 4.952,
+    "condensate_L": 1502.064,
+    "overflow_L": 1370.675,
+    "media_evap_L": 1121.031,
+    "dT_cond_active": 1.406,
+    "hvac_saving_kWh": 21.349,
+    "fan_kWh": 8.976,
+    "pbr_kWh": 5.251,
+    "ctrl_kWh": 1.86,
+    "T_r_max": 48.009,
+    "net_biomass_g": 31.547,
+    "hours": 744
+   },
+   {
+    "month": 11,
+    "T": 27.723,
+    "RH": 68.145,
+    "dT_psy": 4.869,
+    "condensate_L": 1185.988,
+    "overflow_L": 1059.053,
+    "media_evap_L": 924.577,
+    "dT_cond_active": 1.365,
+    "hvac_saving_kWh": 15.997,
+    "fan_kWh": 7.705,
+    "pbr_kWh": 5.081,
+    "ctrl_kWh": 1.8,
+    "T_r_max": 46.662,
+    "net_biomass_g": 43.67,
+    "hours": 720
+   },
+   {
+    "month": 12,
+    "T": 25.238,
+    "RH": 65.951,
+    "dT_psy": 4.917,
+    "condensate_L": 966.679,
+    "overflow_L": 835.853,
+    "media_evap_L": 777.882,
+    "dT_cond_active": 1.27,
+    "hvac_saving_kWh": 12.319,
+    "fan_kWh": 7.014,
+    "pbr_kWh": 5.251,
+    "ctrl_kWh": 1.86,
+    "T_r_max": 44.459,
+    "net_biomass_g": 43.929,
+    "hours": 744
+   }
+  ]
+ },
+ "Ref + enriched + panel cooling with condensate": {
+  "days": 365.0,
+  "condensate_L": 15049.4839569835,
+  "condensate_to_reactor_L": 1526.0181973748595,
+  "reactor_demand_L": 1526.0181973748595,
+  "external_L": 0.0,
+  "coverage_pct": 100.00000000000001,
+  "overflow_L": 13037.506919997682,
+  "media_evap_L": 12119.868939528278,
+  "media_drain_L": 917.6379804694036,
+  "spill_L": 0.0,
+  "mean_T_cond_before": 28.78448116438356,
+  "mean_T_cond_after": 27.377498720244652,
+  "mean_dT_cond_active": 1.4069824441389107,
+  "hvac_before_kWh": 9947.479207348359,
+  "hvac_gross_saving_kWh": 220.83042371868942,
+  "hvac_saving_carnot_kWh": 408.5125325114285,
+  "fan_penalty_kWh": 98.51666501273516,
+  "hvac_net_saving_kWh": 122.31375870595426,
+  "pbr_only_kWh": 61.82057142857143,
+  "control_kWh": 21.9,
+  "pbr_kWh": 83.72057142857142,
+  "net_electricity_kWh": 38.59318727738283,
+  "biomass_produced_g": 524.318247461294,
+  "biomass_harvested_g": 513.9008295083936,
+  "vol_productivity_g_L_d": 0.07182441746045125,
+  "areal_productivity_g_m2_d": 2.8729766984180496,
+  "co2_supplied_g": 55783.034600368555,
+  "co2_transferable_g": 19524.062110128994,
+  "co2_gross_uptake_g": 1451.0303007218138,
+  "co2_carbon_method_g": 960.5662206529053,
+  "co2_stoich_method_g": 985.7183052272328,
+  "co2_diff_pct": 2.551650348882317,
+  "o2_stoich_g": 972.0918112447106,
+  "o2_pq_g": 949.8336518142713,
+  "o2_diff_pct": 2.2897178201654538,
+  "o2_L": 753.7593359884829,
+  "cue_pct": 1.7219683861490012,
+  "carbon_in_biomass_g": 262.159123730647,
+  "net_electricity_co2_kg": 21.920930373553446,
+  "bg11_chem_g": 2500.324432000005,
+  "cooling_L": 467.9588396109616,
+  "net_SAR": 12.34981992876251,
+  "elec_SAR": 39.140402785905366,
+  "opex_SAR": 26.790582857142855,
+  "allowable_capex": 61.749099643812556,
+  "bio_limit": "Phosphorus Limited",
+  "bio_share": 0.5182648401826484,
+  "bio_shares": {
+   "Phosphorus": 0.5182648401826484,
+   "Temperature": 0.32945205479452055,
+   "Light": 0.15228310502283104
+  },
+  "flags": [
+   [
+    "Evaporative Cooling Limited",
+    "water quantity limits the media in 73% of active hours"
+   ]
+  ],
+  "validation": [
+   {
+    "target": "T1 Condensate covers 100% of daily reactor need + 20% margin",
+    "status": "Pass",
+    "value": "100.0% of days meet it; overall coverage 100.0%",
+    "basis": "Simulated (Validation Target, not a guaranteed result)"
+   },
+   {
+    "target": "T2 Growth in conditioned condensate >= 80% of control",
+    "status": "Warning",
+    "value": "Not evaluable by simulation - requires the paired flask/panel experiment",
+    "basis": "Experiment required"
+   },
+   {
+    "target": "T3 Reactor temperature within 25-35 C for >= 90% of time",
+    "status": "Warning",
+    "value": "80.4% of hours (max 35.0 C)",
+    "basis": "Simulated with Low-confidence thermal inputs (alpha, U)"
+   },
+   {
+    "target": "T4a No persistent decline in algae density (model)",
+    "status": "Pass",
+    "value": "longest run of declining days = 1 (after a 14-day start-up)",
+    "basis": "Simulated"
+   },
+   {
+    "target": "T4b No visible contamination",
+    "status": "Warning",
+    "value": "Not evaluable by simulation - requires observation/microscopy",
+    "basis": "Experiment required"
+   }
+  ],
+  "health_counts": {
+   "Healthy": 256,
+   "Warning": 109
+  },
+  "Tr_max": 34.994430448801424,
+  "Tr_in_range": 0.8037671232876712,
+  "X_end": 0.26860301202680037,
+  "X_mean": 0.2996162718728803,
+  "hyd": {
+   "Q_Lph": 68.30330565132695,
+   "static_bar": 0.0977723005,
+   "v_t": 4.428690551393267,
+   "h_net": 0.9871957650489294,
+   "v_o": 2.6841503022037716,
+   "h_loss": 0.01280423495107059
+  },
+  "mean_overflow_Lph": 1.6022498365488116,
+  "conf": [
+   {
+    "output": "Condensate recovered",
+    "value": 15049.484,
+    "unit": "L",
+    "confidence": "Low",
+    "measure_first": "Outdoor-air fraction at coil inlet; Indoor (return) relative humidity; Load model: balance temperature (RTF = min_rtf); Load model: minimum runtime fraction"
+   },
+   {
+    "output": "Water used in reactor (from condensate)",
+    "value": 1526.018,
+    "unit": "L",
+    "confidence": "Low",
+    "measure_first": "Outdoor-air fraction at coil inlet; Indoor (return) relative humidity; Load model: balance temperature (RTF = min_rtf); Load model: minimum runtime fraction"
+   },
+   {
+    "output": "Overflow reused for condenser cooling (evaporated)",
+    "value": 12119.869,
+    "unit": "L",
+    "confidence": "Low",
+    "measure_first": "Outdoor-air fraction at coil inlet; Indoor (return) relative humidity; Load model: balance temperature (RTF = min_rtf); Load model: minimum runtime fraction"
+   },
+   {
+    "output": "Biomass produced",
+    "value": 524.318,
+    "unit": "g",
+    "confidence": "Low",
+    "measure_first": "Biomass-specific light absorption coefficient; Fraction of photons above the validated PPFD credited to growth; Panel solar absorptance (thermal); Heat-loss coefficient per face"
+   },
+   {
+    "output": "Gross Biological CO2 Fixation",
+    "value": 960.566,
+    "unit": "g CO2",
+    "confidence": "Low",
+    "measure_first": "Biomass-specific light absorption coefficient; Fraction of photons above the validated PPFD credited to growth; Panel solar absorptance (thermal); Heat-loss coefficient per face"
+   },
+   {
+    "output": "Gross O2 produced (stoichiometric)",
+    "value": 972.092,
+    "unit": "g O2",
+    "confidence": "Low",
+    "measure_first": "Biomass-specific light absorption coefficient; Fraction of photons above the validated PPFD credited to growth; Panel solar absorptance (thermal); Heat-loss coefficient per face"
+   },
+   {
+    "output": "Condenser inlet air drop (mean, AC on)",
+    "value": 1.407,
+    "unit": "K",
+    "confidence": "Low",
+    "measure_first": "Outdoor-air fraction at coil inlet; Indoor (return) relative humidity; Load model: balance temperature (RTF = min_rtf); Load model: minimum runtime fraction"
+   },
+   {
+    "output": "HVAC electricity saved (gross)",
+    "value": 220.83,
+    "unit": "kWh",
+    "confidence": "Low",
+    "measure_first": "Outdoor-air fraction at coil inlet; Indoor (return) relative humidity; Load model: balance temperature (RTF = min_rtf); Load model: minimum runtime fraction"
+   },
+   {
+    "output": "PBR + control electricity",
+    "value": 83.721,
+    "unit": "kWh",
+    "confidence": "Low",
+    "measure_first": "Small pump wire-to-water efficiency"
+   },
+   {
+    "output": "Net electricity impact",
+    "value": 38.593,
+    "unit": "kWh",
+    "confidence": "Low",
+    "measure_first": "Outdoor-air fraction at coil inlet; Indoor (return) relative humidity; Load model: balance temperature (RTF = min_rtf); Load model: minimum runtime fraction"
+   },
+   {
+    "output": "Net annual benefit",
+    "value": 12.35,
+    "unit": "SAR/yr",
+    "confidence": "Low",
+    "measure_first": "Outdoor-air fraction at coil inlet; Indoor (return) relative humidity; Load model: balance temperature (RTF = min_rtf); Load model: minimum runtime fraction"
+   },
+   {
+    "output": "Net Carbon Impact",
+    "value": null,
+    "unit": "kg CO2e",
+    "confidence": "Not Yet Quantified",
+    "measure_first": "embodied carbon of equipment, nutrients, maintenance, lifetime"
+   }
+  ],
+  "monthly": [
+   {
+    "month": 1,
+    "T": 23.438,
+    "RH": 62.869,
+    "dT_psy": 5.153,
+    "condensate_L": 773.496,
+    "overflow_L": 596.96,
+    "media_evap_L": 586.423,
+    "dT_cond_active": 1.084,
+    "hvac_saving_kWh": 8.615,
+    "fan_kWh": 6.327,
+    "pbr_kWh": 5.251,
+    "ctrl_kWh": 1.86,
+    "T_r_max": 34.92,
+    "net_biomass_g": 49.03,
+    "hours": 744
+   },
+   {
+    "month": 2,
+    "T": 24.008,
+    "RH": 63.215,
+    "dT_psy": 5.215,
+    "condensate_L": 742.836,
+    "overflow_L": 600.578,
+    "media_evap_L": 578.796,
+    "dT_cond_active": 1.139,
+    "hvac_saving_kWh": 8.748,
+    "fan_kWh": 5.911,
+    "pbr_kWh": 4.742,
+    "ctrl_kWh": 1.68,
+    "T_r_max": 34.921,
+    "net_biomass_g": 39.662,
+    "hours": 672
+   },
+   {
+    "month": 3,
+    "T": 25.533,
+    "RH": 63.489,
+    "dT_psy": 5.399,
+    "condensate_L": 960.29,
+    "overflow_L": 805.286,
+    "media_evap_L": 758.787,
+    "dT_cond_active": 1.232,
+    "hvac_saving_kWh": 12.166,
+    "fan_kWh": 7.126,
+    "pbr_kWh": 5.251,
+    "ctrl_kWh": 1.86,
+    "T_r_max": 34.921,
+    "net_biomass_g": 44.016,
+    "hours": 744
+   },
+   {
+    "month": 4,
+    "T": 28.226,
+    "RH": 60.301,
+    "dT_psy": 6.251,
+    "condensate_L": 1135.951,
+    "overflow_L": 985.056,
+    "media_evap_L": 963.089,
+    "dT_cond_active": 1.438,
+    "hvac_saving_kWh": 16.681,
+    "fan_kWh": 7.891,
+    "pbr_kWh": 5.081,
+    "ctrl_kWh": 1.8,
+    "T_r_max": 34.934,
+    "net_biomass_g": 42.759,
+    "hours": 720
+   },
+   {
+    "month": 5,
+    "T": 30.611,
+    "RH": 59.327,
+    "dT_psy": 6.756,
+    "condensate_L": 1386.612,
+    "overflow_L": 1226.658,
+    "media_evap_L": 1201.707,
+    "dT_cond_active": 1.571,
+    "hvac_saving_kWh": 22.359,
+    "fan_kWh": 9.064,
+    "pbr_kWh": 5.251,
+    "ctrl_kWh": 1.86,
+    "T_r_max": 34.988,
+    "net_biomass_g": 44.306,
+    "hours": 744
+   },
+   {
+    "month": 6,
+    "T": 31.597,
+    "RH": 61.589,
+    "dT_psy": 6.511,
+    "condensate_L": 1466.405,
+    "overflow_L": 1306.135,
+    "media_evap_L": 1229.82,
+    "dT_cond_active": 1.582,
+    "hvac_saving_kWh": 23.718,
+    "fan_kWh": 9.136,
+    "pbr_kWh": 5.081,
+    "ctrl_kWh": 1.8,
+    "T_r_max": 34.991,
+    "net_biomass_g": 42.881,
+    "hours": 720
+   },
+   {
+    "month": 7,
+    "T": 33.072,
+    "RH": 55.941,
+    "dT_psy": 7.701,
+    "condensate_L": 1584.653,
+    "overflow_L": 1410.385,
+    "media_evap_L": 1410.385,
+    "dT_cond_active": 1.686,
+    "hvac_saving_kWh": 28.024,
+    "fan_kWh": 10.003,
+    "pbr_kWh": 5.251,
+    "ctrl_kWh": 1.86,
+    "T_r_max": 34.993,
+    "net_biomass_g": 44.335,
+    "hours": 744
+   },
+   {
+    "month": 8,
+    "T": 33.284,
+    "RH": 61.561,
+    "dT_psy": 6.584,
+    "condensate_L": 1709.314,
+    "overflow_L": 1531.849,
+    "media_evap_L": 1500.918,
+    "dT_cond_active": 1.766,
+    "hvac_saving_kWh": 29.939,
+    "fan_kWh": 10.084,
+    "pbr_kWh": 5.251,
+    "ctrl_kWh": 1.86,
+    "T_r_max": 34.994,
+    "net_biomass_g": 44.276,
+    "hours": 744
+   },
+   {
+    "month": 9,
+    "T": 31.984,
+    "RH": 69.951,
+    "dT_psy": 4.966,
+    "condensate_L": 1635.195,
+    "overflow_L": 1458.805,
+    "media_evap_L": 1216.254,
+    "dT_cond_active": 1.506,
+    "hvac_saving_kWh": 23.841,
+    "fan_kWh": 9.279,
+    "pbr_kWh": 5.081,
+    "ctrl_kWh": 1.8,
+    "T_r_max": 34.993,
+    "net_biomass_g": 42.682,
+    "hours": 720
+   },
+   {
+    "month": 10,
+    "T": 30.38,
+    "RH": 69.677,
+    "dT_psy": 4.952,
+    "condensate_L": 1502.064,
+    "overflow_L": 1309.571,
+    "media_evap_L": 1059.919,
+    "dT_cond_active": 1.339,
+    "hvac_saving_kWh": 20.071,
+    "fan_kWh": 8.976,
+    "pbr_kWh": 5.251,
+    "ctrl_kWh": 1.86,
+    "T_r_max": 34.991,
+    "net_biomass_g": 43.931,
+    "hours": 744
+   },
+   {
+    "month": 11,
+    "T": 27.723,
+    "RH": 68.145,
+    "dT_psy": 4.869,
+    "condensate_L": 1185.988,
+    "overflow_L": 1008.931,
+    "media_evap_L": 874.45,
+    "dT_cond_active": 1.302,
+    "hvac_saving_kWh": 15.036,
+    "fan_kWh": 7.705,
+    "pbr_kWh": 5.081,
+    "ctrl_kWh": 1.8,
+    "T_r_max": 34.977,
+    "net_biomass_g": 42.521,
+    "hours": 720
+   },
+   {
+    "month": 12,
+    "T": 25.238,
+    "RH": 65.951,
+    "dT_psy": 4.917,
+    "condensate_L": 966.679,
+    "overflow_L": 797.293,
+    "media_evap_L": 739.322,
+    "dT_cond_active": 1.218,
+    "hvac_saving_kWh": 11.633,
+    "fan_kWh": 7.014,
+    "pbr_kWh": 5.251,
+    "ctrl_kWh": 1.86,
+    "T_r_max": 34.97,
+    "net_biomass_g": 43.919,
+    "hours": 744
+   }
+  ]
+ },
+ "Ref + enriched + cooling + 2x BG-11": {
+  "days": 365.0,
+  "condensate_L": 15049.4839569835,
+  "condensate_to_reactor_L": 1526.0181973748595,
+  "reactor_demand_L": 1526.0181973748595,
+  "external_L": 0.0,
+  "coverage_pct": 100.00000000000001,
+  "overflow_L": 13037.506919997682,
+  "media_evap_L": 12119.868939528278,
+  "media_drain_L": 917.6379804694036,
+  "spill_L": 0.0,
+  "mean_T_cond_before": 28.78448116438356,
+  "mean_T_cond_after": 27.377498720244652,
+  "mean_dT_cond_active": 1.4069824441389107,
+  "hvac_before_kWh": 9947.479207348359,
+  "hvac_gross_saving_kWh": 220.83042371868942,
+  "hvac_saving_carnot_kWh": 408.5125325114285,
+  "fan_penalty_kWh": 98.51666501273516,
+  "hvac_net_saving_kWh": 122.31375870595426,
+  "pbr_only_kWh": 61.82057142857143,
+  "control_kWh": 21.9,
+  "pbr_kWh": 83.72057142857142,
+  "net_electricity_kWh": 38.59318727738283,
+  "biomass_produced_g": 967.5173871717851,
+  "biomass_harvested_g": 942.7915364737521,
+  "vol_productivity_g_L_d": 0.1325366283796966,
+  "areal_productivity_g_m2_d": 5.301465135187864,
+  "co2_supplied_g": 55783.034600368555,
+  "co2_transferable_g": 19524.062110128994,
+  "co2_gross_uptake_g": 2657.3482142606063,
+  "co2_carbon_method_g": 1772.519885606656,
+  "co2_stoich_method_g": 1818.9326878829559,
+  "co2_diff_pct": 2.551650348882307,
+  "o2_stoich_g": 1793.7879024055915,
+  "o2_pq_g": 1752.7152211482385,
+  "o2_diff_pct": 2.2897178201654578,
+  "o2_L": 1390.9019318763133,
+  "cue_pct": 3.177525027645135,
+  "carbon_in_biomass_g": 483.75869358589256,
+  "net_electricity_co2_kg": 21.920930373553446,
+  "bg11_chem_g": 5000.64886400001,
+  "cooling_L": 467.9588396109616,
+  "net_SAR": 12.34981992876251,
+  "elec_SAR": 39.140402785905366,
+  "opex_SAR": 26.790582857142855,
+  "allowable_capex": 61.749099643812556,
+  "bio_limit": "Temperature Limited",
+  "bio_share": 0.5778538812785388,
+  "bio_shares": {
+   "Temperature": 0.5778538812785388,
+   "Phosphorus": 0.2694063926940639,
+   "Light": 0.15273972602739727
+  },
+  "flags": [
+   [
+    "Evaporative Cooling Limited",
+    "water quantity limits the media in 73% of active hours"
+   ]
+  ],
+  "validation": [
+   {
+    "target": "T1 Condensate covers 100% of daily reactor need + 20% margin",
+    "status": "Pass",
+    "value": "100.0% of days meet it; overall coverage 100.0%",
+    "basis": "Simulated (Validation Target, not a guaranteed result)"
+   },
+   {
+    "target": "T2 Growth in conditioned condensate >= 80% of control",
+    "status": "Warning",
+    "value": "Not evaluable by simulation - requires the paired flask/panel experiment",
+    "basis": "Experiment required"
+   },
+   {
+    "target": "T3 Reactor temperature within 25-35 C for >= 90% of time",
+    "status": "Warning",
+    "value": "80.4% of hours (max 35.0 C)",
+    "basis": "Simulated with Low-confidence thermal inputs (alpha, U)"
+   },
+   {
+    "target": "T4a No persistent decline in algae density (model)",
+    "status": "Fail",
+    "value": "longest run of declining days = 10 (after a 14-day start-up)",
+    "basis": "Simulated"
+   },
+   {
+    "target": "T4b No visible contamination",
+    "status": "Warning",
+    "value": "Not evaluable by simulation - requires observation/microscopy",
+    "basis": "Experiment required"
+   }
+  ],
+  "health_counts": {
+   "Healthy": 344,
+   "Warning": 21
+  },
+  "Tr_max": 34.994430448801424,
+  "Tr_in_range": 0.8037671232876712,
+  "X_end": 0.5397410727947335,
+  "X_mean": 0.5405606038615746,
+  "hyd": {
+   "Q_Lph": 68.30330565132695,
+   "static_bar": 0.0977723005,
+   "v_t": 4.428690551393267,
+   "h_net": 0.9871957650489294,
+   "v_o": 2.6841503022037716,
+   "h_loss": 0.01280423495107059
+  },
+  "mean_overflow_Lph": 1.6022498365488116,
+  "conf": [
+   {
+    "output": "Condensate recovered",
+    "value": 15049.484,
+    "unit": "L",
+    "confidence": "Low",
+    "measure_first": "Outdoor-air fraction at coil inlet; Indoor (return) relative humidity; Load model: balance temperature (RTF = min_rtf); Load model: minimum runtime fraction"
+   },
+   {
+    "output": "Water used in reactor (from condensate)",
+    "value": 1526.018,
+    "unit": "L",
+    "confidence": "Low",
+    "measure_first": "Outdoor-air fraction at coil inlet; Indoor (return) relative humidity; Load model: balance temperature (RTF = min_rtf); Load model: minimum runtime fraction"
+   },
+   {
+    "output": "Overflow reused for condenser cooling (evaporated)",
+    "value": 12119.869,
+    "unit": "L",
+    "confidence": "Low",
+    "measure_first": "Outdoor-air fraction at coil inlet; Indoor (return) relative humidity; Load model: balance temperature (RTF = min_rtf); Load model: minimum runtime fraction"
+   },
+   {
+    "output": "Biomass produced",
+    "value": 967.517,
+    "unit": "g",
+    "confidence": "Low",
+    "measure_first": "Biomass-specific light absorption coefficient; Fraction of photons above the validated PPFD credited to growth; Panel solar absorptance (thermal); Heat-loss coefficient per face"
+   },
+   {
+    "output": "Gross Biological CO2 Fixation",
+    "value": 1772.52,
+    "unit": "g CO2",
+    "confidence": "Low",
+    "measure_first": "Biomass-specific light absorption coefficient; Fraction of photons above the validated PPFD credited to growth; Panel solar absorptance (thermal); Heat-loss coefficient per face"
+   },
+   {
+    "output": "Gross O2 produced (stoichiometric)",
+    "value": 1793.788,
+    "unit": "g O2",
+    "confidence": "Low",
+    "measure_first": "Biomass-specific light absorption coefficient; Fraction of photons above the validated PPFD credited to growth; Panel solar absorptance (thermal); Heat-loss coefficient per face"
+   },
+   {
+    "output": "Condenser inlet air drop (mean, AC on)",
+    "value": 1.407,
+    "unit": "K",
+    "confidence": "Low",
+    "measure_first": "Outdoor-air fraction at coil inlet; Indoor (return) relative humidity; Load model: balance temperature (RTF = min_rtf); Load model: minimum runtime fraction"
+   },
+   {
+    "output": "HVAC electricity saved (gross)",
+    "value": 220.83,
+    "unit": "kWh",
+    "confidence": "Low",
+    "measure_first": "Outdoor-air fraction at coil inlet; Indoor (return) relative humidity; Load model: balance temperature (RTF = min_rtf); Load model: minimum runtime fraction"
+   },
+   {
+    "output": "PBR + control electricity",
+    "value": 83.721,
+    "unit": "kWh",
+    "confidence": "Low",
+    "measure_first": "Small pump wire-to-water efficiency"
+   },
+   {
+    "output": "Net electricity impact",
+    "value": 38.593,
+    "unit": "kWh",
+    "confidence": "Low",
+    "measure_first": "Outdoor-air fraction at coil inlet; Indoor (return) relative humidity; Load model: balance temperature (RTF = min_rtf); Load model: minimum runtime fraction"
+   },
+   {
+    "output": "Net annual benefit",
+    "value": 12.35,
+    "unit": "SAR/yr",
+    "confidence": "Low",
+    "measure_first": "Outdoor-air fraction at coil inlet; Indoor (return) relative humidity; Load model: balance temperature (RTF = min_rtf); Load model: minimum runtime fraction"
+   },
+   {
+    "output": "Net Carbon Impact",
+    "value": null,
+    "unit": "kg CO2e",
+    "confidence": "Not Yet Quantified",
+    "measure_first": "embodied carbon of equipment, nutrients, maintenance, lifetime"
+   }
+  ],
+  "monthly": [
+   {
+    "month": 1,
+    "T": 23.438,
+    "RH": 62.869,
+    "dT_psy": 5.153,
+    "condensate_L": 773.496,
+    "overflow_L": 596.96,
+    "media_evap_L": 586.423,
+    "dT_cond_active": 1.084,
+    "hvac_saving_kWh": 8.615,
+    "fan_kWh": 6.327,
+    "pbr_kWh": 5.251,
+    "ctrl_kWh": 1.86,
+    "T_r_max": 34.92,
+    "net_biomass_g": 98.462,
+    "hours": 744
+   },
+   {
+    "month": 2,
+    "T": 24.008,
+    "RH": 63.215,
+    "dT_psy": 5.215,
+    "condensate_L": 742.836,
+    "overflow_L": 600.578,
+    "media_evap_L": 578.796,
+    "dT_cond_active": 1.139,
+    "hvac_saving_kWh": 8.748,
+    "fan_kWh": 5.911,
+    "pbr_kWh": 4.742,
+    "ctrl_kWh": 1.68,
+    "T_r_max": 34.921,
+    "net_biomass_g": 79.71,
+    "hours": 672
+   },
+   {
+    "month": 3,
+    "T": 25.533,
+    "RH": 63.489,
+    "dT_psy": 5.399,
+    "condensate_L": 960.29,
+    "overflow_L": 805.286,
+    "media_evap_L": 758.787,
+    "dT_cond_active": 1.232,
+    "hvac_saving_kWh": 12.166,
+    "fan_kWh": 7.126,
+    "pbr_kWh": 5.251,
+    "ctrl_kWh": 1.86,
+    "T_r_max": 34.921,
+    "net_biomass_g": 88.552,
+    "hours": 744
+   },
+   {
+    "month": 4,
+    "T": 28.226,
+    "RH": 60.301,
+    "dT_psy": 6.251,
+    "condensate_L": 1135.951,
+    "overflow_L": 985.056,
+    "media_evap_L": 963.089,
+    "dT_cond_active": 1.438,
+    "hvac_saving_kWh": 16.681,
+    "fan_kWh": 7.891,
+    "pbr_kWh": 5.081,
+    "ctrl_kWh": 1.8,
+    "T_r_max": 34.934,
+    "net_biomass_g": 86.213,
+    "hours": 720
+   },
+   {
+    "month": 5,
+    "T": 30.611,
+    "RH": 59.327,
+    "dT_psy": 6.756,
+    "condensate_L": 1386.612,
+    "overflow_L": 1226.658,
+    "media_evap_L": 1201.707,
+    "dT_cond_active": 1.571,
+    "hvac_saving_kWh": 22.359,
+    "fan_kWh": 9.064,
+    "pbr_kWh": 5.251,
+    "ctrl_kWh": 1.86,
+    "T_r_max": 34.988,
+    "net_biomass_g": 66.43,
+    "hours": 744
+   },
+   {
+    "month": 6,
+    "T": 31.597,
+    "RH": 61.589,
+    "dT_psy": 6.511,
+    "condensate_L": 1466.405,
+    "overflow_L": 1306.135,
+    "media_evap_L": 1229.82,
+    "dT_cond_active": 1.582,
+    "hvac_saving_kWh": 23.718,
+    "fan_kWh": 9.136,
+    "pbr_kWh": 5.081,
+    "ctrl_kWh": 1.8,
+    "T_r_max": 34.991,
+    "net_biomass_g": 61.529,
+    "hours": 720
+   },
+   {
+    "month": 7,
+    "T": 33.072,
+    "RH": 55.941,
+    "dT_psy": 7.701,
+    "condensate_L": 1584.653,
+    "overflow_L": 1410.385,
+    "media_evap_L": 1410.385,
+    "dT_cond_active": 1.686,
+    "hvac_saving_kWh": 28.024,
+    "fan_kWh": 10.003,
+    "pbr_kWh": 5.251,
+    "ctrl_kWh": 1.86,
+    "T_r_max": 34.993,
+    "net_biomass_g": 61.912,
+    "hours": 744
+   },
+   {
+    "month": 8,
+    "T": 33.284,
+    "RH": 61.561,
+    "dT_psy": 6.584,
+    "condensate_L": 1709.314,
+    "overflow_L": 1531.849,
+    "media_evap_L": 1500.918,
+    "dT_cond_active": 1.766,
+    "hvac_saving_kWh": 29.939,
+    "fan_kWh": 10.084,
+    "pbr_kWh": 5.251,
+    "ctrl_kWh": 1.86,
+    "T_r_max": 34.994,
+    "net_biomass_g": 74.523,
+    "hours": 744
+   },
+   {
+    "month": 9,
+    "T": 31.984,
+    "RH": 69.951,
+    "dT_psy": 4.966,
+    "condensate_L": 1635.195,
+    "overflow_L": 1458.805,
+    "media_evap_L": 1216.254,
+    "dT_cond_active": 1.506,
+    "hvac_saving_kWh": 23.841,
+    "fan_kWh": 9.279,
+    "pbr_kWh": 5.081,
+    "ctrl_kWh": 1.8,
+    "T_r_max": 34.993,
+    "net_biomass_g": 88.18,
+    "hours": 720
+   },
+   {
+    "month": 10,
+    "T": 30.38,
+    "RH": 69.677,
+    "dT_psy": 4.952,
+    "condensate_L": 1502.064,
+    "overflow_L": 1309.571,
+    "media_evap_L": 1059.919,
+    "dT_cond_active": 1.339,
+    "hvac_saving_kWh": 20.071,
+    "fan_kWh": 8.976,
+    "pbr_kWh": 5.251,
+    "ctrl_kWh": 1.86,
+    "T_r_max": 34.991,
+    "net_biomass_g": 88.343,
+    "hours": 744
+   },
+   {
+    "month": 11,
+    "T": 27.723,
+    "RH": 68.145,
+    "dT_psy": 4.869,
+    "condensate_L": 1185.988,
+    "overflow_L": 1008.931,
+    "media_evap_L": 874.45,
+    "dT_cond_active": 1.302,
+    "hvac_saving_kWh": 15.036,
+    "fan_kWh": 7.705,
+    "pbr_kWh": 5.081,
+    "ctrl_kWh": 1.8,
+    "T_r_max": 34.977,
+    "net_biomass_g": 85.437,
+    "hours": 720
+   },
+   {
+    "month": 12,
+    "T": 25.238,
+    "RH": 65.951,
+    "dT_psy": 4.917,
+    "condensate_L": 966.679,
+    "overflow_L": 797.293,
+    "media_evap_L": 739.322,
+    "dT_cond_active": 1.218,
+    "hvac_saving_kWh": 11.633,
+    "fan_kWh": 7.014,
+    "pbr_kWh": 5.251,
+    "ctrl_kWh": 1.86,
+    "T_r_max": 34.97,
+    "net_biomass_g": 88.226,
+    "hours": 744
+   }
+  ]
+ },
+ "Ref + east facade": {
+  "days": 365.0,
+  "condensate_L": 15049.4839569835,
+  "condensate_to_reactor_L": 1539.889604877808,
+  "reactor_demand_L": 1539.889604877808,
+  "external_L": 0.0,
+  "coverage_pct": 100.0,
+  "overflow_L": 13491.594352105694,
+  "media_evap_L": 12574.099731750164,
+  "media_drain_L": 917.4946203555276,
+  "spill_L": 0.0,
+  "mean_T_cond_before": 28.78448116438356,
+  "mean_T_cond_after": 27.332686425892508,
+  "mean_dT_cond_active": 1.4517947384910526,
+  "hvac_before_kWh": 9947.479207348359,
+  "hvac_gross_saving_kWh": 230.04261004419823,
+  "hvac_saving_carnot_kWh": 423.99247549766574,
+  "fan_penalty_kWh": 98.51666501273516,
+  "hvac_net_saving_kWh": 131.52594503146307,
+  "pbr_only_kWh": 61.82057142857143,
+  "control_kWh": 21.9,
+  "pbr_kWh": 83.72057142857142,
+  "net_electricity_kWh": 47.80537360289164,
+  "biomass_produced_g": 73.01919477911748,
+  "biomass_harvested_g": 76.56698310698188,
+  "vol_productivity_g_L_d": 0.010002629421796916,
+  "areal_productivity_g_m2_d": 0.40010517687187663,
+  "co2_supplied_g": 1572.6132856761524,
+  "co2_transferable_g": 550.4146499866533,
+  "co2_gross_uptake_g": 205.5923328489601,
+  "co2_carbon_method_g": 133.77328045267595,
+  "co2_stoich_method_g": 137.27608618474088,
+  "co2_diff_pct": 2.551650348882315,
+  "o2_stoich_g": 135.37839213521283,
+  "o2_pq_g": 132.2786089658394,
+  "o2_diff_pct": 2.289717820165456,
+  "o2_L": 104.97231411955455,
+  "cue_pct": 8.50643204347339,
+  "carbon_in_biomass_g": 36.50959738955874,
+  "net_electricity_co2_kg": 27.15345220644245,
+  "bg11_chem_g": 2500.324432000005,
+  "cooling_L": 0.0,
+  "net_SAR": 15.297719552925326,
+  "elec_SAR": 42.08830241006818,
+  "opex_SAR": 26.790582857142855,
+  "allowable_capex": 76.48859776462663,
+  "bio_limit": "Carbon Limited",
+  "bio_share": 0.5876712328767123,
+  "bio_shares": {
+   "Carbon": 0.5876712328767123,
+   "Temperature": 0.3598173515981735,
+   "Max growth rate": 0.02671232876712329,
+   "Light": 0.025799086757990867
+  },
+  "flags": [
+   [
+    "Evaporative Cooling Limited",
+    "water quantity limits the media in 73% of active hours"
+   ]
+  ],
+  "validation": [
+   {
+    "target": "T1 Condensate covers 100% of daily reactor need + 20% margin",
+    "status": "Pass",
+    "value": "100.0% of days meet it; overall coverage 100.0%",
+    "basis": "Simulated (Validation Target, not a guaranteed result)"
+   },
+   {
+    "target": "T2 Growth in conditioned condensate >= 80% of control",
+    "status": "Warning",
+    "value": "Not evaluable by simulation - requires the paired flask/panel experiment",
+    "basis": "Experiment required"
+   },
+   {
+    "target": "T3 Reactor temperature within 25-35 C for >= 90% of time",
+    "status": "Fail",
+    "value": "47.6% of hours (max 46.0 C)",
+    "basis": "Simulated with Low-confidence thermal inputs (alpha, U)"
+   },
+   {
+    "target": "T4a No persistent decline in algae density (model)",
+    "status": "Fail",
+    "value": "longest run of declining days = 14 (after a 14-day start-up)",
+    "basis": "Simulated"
+   },
+   {
+    "target": "T4b No visible contamination",
+    "status": "Warning",
+    "value": "Not evaluable by simulation - requires observation/microscopy",
+    "basis": "Experiment required"
+   }
+  ],
+  "health_counts": {
+   "Warning": 296,
+   "Critical": 69
+  },
+  "Tr_max": 46.009048091691184,
+  "Tr_in_range": 0.4762557077625571,
+  "X_end": 0.041780686905568826,
+  "X_mean": 0.04384410104038434,
+  "hyd": {
+   "Q_Lph": 68.30330565132695,
+   "static_bar": 0.0977723005,
+   "v_t": 4.428690551393267,
+   "h_net": 0.9871957650489294,
+   "v_o": 2.6841503022037716,
+   "h_loss": 0.01280423495107059
+  },
+  "mean_overflow_Lph": 1.6578513580862244,
+  "conf": [
+   {
+    "output": "Condensate recovered",
+    "value": 15049.484,
+    "unit": "L",
+    "confidence": "Low",
+    "measure_first": "Outdoor-air fraction at coil inlet; Indoor (return) relative humidity; Load model: balance temperature (RTF = min_rtf); Load model: minimum runtime fraction"
+   },
+   {
+    "output": "Water used in reactor (from condensate)",
+    "value": 1539.89,
+    "unit": "L",
+    "confidence": "Low",
+    "measure_first": "Outdoor-air fraction at coil inlet; Indoor (return) relative humidity; Load model: balance temperature (RTF = min_rtf); Load model: minimum runtime fraction"
+   },
+   {
+    "output": "Overflow reused for condenser cooling (evaporated)",
+    "value": 12574.1,
+    "unit": "L",
+    "confidence": "Low",
+    "measure_first": "Outdoor-air fraction at coil inlet; Indoor (return) relative humidity; Load model: balance temperature (RTF = min_rtf); Load model: minimum runtime fraction"
+   },
+   {
+    "output": "Biomass produced",
+    "value": 73.019,
+    "unit": "g",
+    "confidence": "Low",
+    "measure_first": "Biomass-specific light absorption coefficient; Fraction of photons above the validated PPFD credited to growth; Panel solar absorptance (thermal); Heat-loss coefficient per face"
+   },
+   {
+    "output": "Gross Biological CO2 Fixation",
+    "value": 133.773,
+    "unit": "g CO2",
+    "confidence": "Low",
+    "measure_first": "Biomass-specific light absorption coefficient; Fraction of photons above the validated PPFD credited to growth; Panel solar absorptance (thermal); Heat-loss coefficient per face"
+   },
+   {
+    "output": "Gross O2 produced (stoichiometric)",
+    "value": 135.378,
+    "unit": "g O2",
+    "confidence": "Low",
+    "measure_first": "Biomass-specific light absorption coefficient; Fraction of photons above the validated PPFD credited to growth; Panel solar absorptance (thermal); Heat-loss coefficient per face"
+   },
+   {
+    "output": "Condenser inlet air drop (mean, AC on)",
+    "value": 1.452,
+    "unit": "K",
+    "confidence": "Low",
+    "measure_first": "Outdoor-air fraction at coil inlet; Indoor (return) relative humidity; Load model: balance temperature (RTF = min_rtf); Load model: minimum runtime fraction"
+   },
+   {
+    "output": "HVAC electricity saved (gross)",
+    "value": 230.043,
+    "unit": "kWh",
+    "confidence": "Low",
+    "measure_first": "Outdoor-air fraction at coil inlet; Indoor (return) relative humidity; Load model: balance temperature (RTF = min_rtf); Load model: minimum runtime fraction"
+   },
+   {
+    "output": "PBR + control electricity",
+    "value": 83.721,
+    "unit": "kWh",
+    "confidence": "Low",
+    "measure_first": "Small pump wire-to-water efficiency"
+   },
+   {
+    "output": "Net electricity impact",
+    "value": 47.805,
+    "unit": "kWh",
+    "confidence": "Low",
+    "measure_first": "Outdoor-air fraction at coil inlet; Indoor (return) relative humidity; Load model: balance temperature (RTF = min_rtf); Load model: minimum runtime fraction"
+   },
+   {
+    "output": "Net annual benefit",
+    "value": 15.298,
+    "unit": "SAR/yr",
+    "confidence": "Low",
+    "measure_first": "Outdoor-air fraction at coil inlet; Indoor (return) relative humidity; Load model: balance temperature (RTF = min_rtf); Load model: minimum runtime fraction"
+   },
+   {
+    "output": "Net Carbon Impact",
+    "value": null,
+    "unit": "kg CO2e",
+    "confidence": "Not Yet Quantified",
+    "measure_first": "embodied carbon of equipment, nutrients, maintenance, lifetime"
+   }
+  ],
+  "monthly": [
+   {
+    "month": 1,
+    "T": 23.438,
+    "RH": 62.869,
+    "dT_psy": 5.153,
+    "condensate_L": 773.496,
+    "overflow_L": 625.988,
+    "media_evap_L": 615.451,
+    "dT_cond_active": 1.127,
+    "hvac_saving_kWh": 9.101,
+    "fan_kWh": 6.327,
+    "pbr_kWh": 5.251,
+    "ctrl_kWh": 1.86,
+    "T_r_max": 34.535,
+    "net_biomass_g": 5.109,
+    "hours": 744
+   },
+   {
+    "month": 2,
+    "T": 24.008,
+    "RH": 63.215,
+    "dT_psy": 5.215,
+    "condensate_L": 742.836,
+    "overflow_L": 625.573,
+    "media_evap_L": 603.79,
+    "dT_cond_active": 1.177,
+    "hvac_saving_kWh": 9.183,
+    "fan_kWh": 5.911,
+    "pbr_kWh": 4.742,
+    "ctrl_kWh": 1.68,
+    "T_r_max": 36.364,
+    "net_biomass_g": 7.191,
+    "hours": 672
+   },
+   {
+    "month": 3,
+    "T": 25.533,
+    "RH": 63.489,
+    "dT_psy": 5.399,
+    "condensate_L": 960.29,
+    "overflow_L": 830.117,
+    "media_evap_L": 783.617,
+    "dT_cond_active": 1.264,
+    "hvac_saving_kWh": 12.624,
+    "fan_kWh": 7.126,
+    "pbr_kWh": 5.251,
+    "ctrl_kWh": 1.86,
+    "T_r_max": 38.338,
+    "net_biomass_g": 8.072,
+    "hours": 744
+   },
+   {
+    "month": 4,
+    "T": 28.226,
+    "RH": 60.301,
+    "dT_psy": 6.251,
+    "condensate_L": 1135.951,
+    "overflow_L": 1009.245,
+    "media_evap_L": 987.278,
+    "dT_cond_active": 1.468,
+    "hvac_saving_kWh": 17.166,
+    "fan_kWh": 7.891,
+    "pbr_kWh": 5.081,
+    "ctrl_kWh": 1.8,
+    "T_r_max": 41.455,
+    "net_biomass_g": 7.839,
+    "hours": 720
+   },
+   {
+    "month": 5,
+    "T": 30.611,
+    "RH": 59.327,
+    "dT_psy": 6.756,
+    "condensate_L": 1386.612,
+    "overflow_L": 1255.061,
+    "media_evap_L": 1230.111,
+    "dT_cond_active": 1.602,
+    "hvac_saving_kWh": 22.969,
+    "fan_kWh": 9.064,
+    "pbr_kWh": 5.251,
+    "ctrl_kWh": 1.86,
+    "T_r_max": 43.8,
+    "net_biomass_g": 7.336,
+    "hours": 744
+   },
+   {
+    "month": 6,
+    "T": 31.597,
+    "RH": 61.589,
+    "dT_psy": 6.511,
+    "condensate_L": 1466.405,
+    "overflow_L": 1338.885,
+    "media_evap_L": 1262.615,
+    "dT_cond_active": 1.617,
+    "hvac_saving_kWh": 24.442,
+    "fan_kWh": 9.136,
+    "pbr_kWh": 5.081,
+    "ctrl_kWh": 1.8,
+    "T_r_max": 44.704,
+    "net_biomass_g": 5.487,
+    "hours": 720
+   },
+   {
+    "month": 7,
+    "T": 33.072,
+    "RH": 55.941,
+    "dT_psy": 7.701,
+    "condensate_L": 1584.653,
+    "overflow_L": 1452.201,
+    "media_evap_L": 1452.201,
+    "dT_cond_active": 1.728,
+    "hvac_saving_kWh": 28.97,
+    "fan_kWh": 10.003,
+    "pbr_kWh": 5.251,
+    "ctrl_kWh": 1.86,
+    "T_r_max": 46.009,
+    "net_biomass_g": 3.364,
+    "hours": 744
+   },
+   {
+    "month": 8,
+    "T": 33.284,
+    "RH": 61.561,
+    "dT_psy": 6.584,
+    "condensate_L": 1709.314,
+    "overflow_L": 1577.433,
+    "media_evap_L": 1546.503,
+    "dT_cond_active": 1.813,
+    "hvac_saving_kWh": 30.954,
+    "fan_kWh": 10.084,
+    "pbr_kWh": 5.251,
+    "ctrl_kWh": 1.86,
+    "T_r_max": 45.78,
+    "net_biomass_g": 2.687,
+    "hours": 744
+   },
+   {
+    "month": 9,
+    "T": 31.984,
+    "RH": 69.951,
+    "dT_psy": 4.966,
+    "condensate_L": 1635.195,
+    "overflow_L": 1508.446,
+    "media_evap_L": 1265.953,
+    "dT_cond_active": 1.561,
+    "hvac_saving_kWh": 24.909,
+    "fan_kWh": 9.279,
+    "pbr_kWh": 5.081,
+    "ctrl_kWh": 1.8,
+    "T_r_max": 44.375,
+    "net_biomass_g": 5.058,
+    "hours": 720
+   },
+   {
+    "month": 10,
+    "T": 30.38,
+    "RH": 69.677,
+    "dT_psy": 4.952,
+    "condensate_L": 1502.064,
+    "overflow_L": 1371.378,
+    "media_evap_L": 1121.768,
+    "dT_cond_active": 1.407,
+    "hvac_saving_kWh": 21.365,
+    "fan_kWh": 8.976,
+    "pbr_kWh": 5.251,
+    "ctrl_kWh": 1.86,
+    "T_r_max": 43.036,
+    "net_biomass_g": 7.526,
+    "hours": 744
+   },
+   {
+    "month": 11,
+    "T": 27.723,
+    "RH": 68.145,
+    "dT_psy": 4.869,
+    "condensate_L": 1185.988,
+    "overflow_L": 1060.196,
+    "media_evap_L": 925.714,
+    "dT_cond_active": 1.367,
+    "hvac_saving_kWh": 16.019,
+    "fan_kWh": 7.705,
+    "pbr_kWh": 5.081,
+    "ctrl_kWh": 1.8,
+    "T_r_max": 39.278,
+    "net_biomass_g": 6.522,
+    "hours": 720
+   },
+   {
+    "month": 12,
+    "T": 25.238,
+    "RH": 65.951,
+    "dT_psy": 4.917,
+    "condensate_L": 966.679,
+    "overflow_L": 837.071,
+    "media_evap_L": 779.099,
+    "dT_cond_active": 1.272,
+    "hvac_saving_kWh": 12.341,
+    "fan_kWh": 7.014,
+    "pbr_kWh": 5.251,
+    "ctrl_kWh": 1.86,
+    "T_r_max": 36.163,
+    "net_biomass_g": 6.828,
+    "hours": 744
+   }
+  ]
+ },
+ "Ref, AC 5 TR": {
+  "days": 365.0,
+  "condensate_L": 37623.70989245875,
+  "condensate_to_reactor_L": 1540.3632336562785,
+  "reactor_demand_L": 1540.3632336562785,
+  "external_L": 0.0,
+  "coverage_pct": 100.0,
+  "overflow_L": 36065.346658802475,
+  "media_evap_L": 33753.11755267673,
+  "media_drain_L": 2312.229106125739,
+  "spill_L": 0.0,
+  "mean_T_cond_before": 28.78448116438356,
+  "mean_T_cond_after": 27.227083107082834,
+  "mean_dT_cond_active": 1.5573980573007307,
+  "hvac_before_kWh": 24868.698018370895,
+  "hvac_gross_saving_kWh": 617.4038588282601,
+  "hvac_saving_carnot_kWh": 1138.1738243391046,
+  "fan_penalty_kWh": 246.29166253183791,
+  "hvac_net_saving_kWh": 371.1121962964222,
+  "pbr_only_kWh": 61.82057142857143,
+  "control_kWh": 21.9,
+  "pbr_kWh": 83.72057142857142,
+  "net_electricity_kWh": 287.3916248678508,
+  "biomass_produced_g": 72.69856529573228,
+  "biomass_harvested_g": 76.31519298634514,
+  "vol_productivity_g_L_d": 0.009958707574757846,
+  "areal_productivity_g_m2_d": 0.3983483029903139,
+  "co2_supplied_g": 1572.9851035042143,
+  "co2_transferable_g": 550.544786226475,
+  "co2_gross_uptake_g": 204.62622065468116,
+  "co2_carbon_method_g": 133.18587794937483,
+  "co2_stoich_method_g": 136.6733027559767,
+  "co2_diff_pct": 2.5516503488823172,
+  "o2_stoich_g": 134.78394153817277,
+  "o2_pq_g": 131.6977696100518,
+  "o2_diff_pct": 2.289717820165478,
+  "o2_L": 104.51137752681736,
+  "cue_pct": 8.467078146682399,
+  "carbon_in_biomass_g": 36.34928264786614,
+  "net_electricity_co2_kg": 163.23844292493925,
+  "bg11_chem_g": 2500.324432000005,
+  "cooling_L": 0.0,
+  "net_SAR": 91.96531995771225,
+  "elec_SAR": 118.7559028148551,
+  "opex_SAR": 26.790582857142855,
+  "allowable_capex": 459.8265997885613,
+  "bio_limit": "Carbon Limited",
+  "bio_share": 0.5828767123287671,
+  "bio_shares": {
+   "Carbon": 0.5828767123287671,
+   "Temperature": 0.3552511415525114,
+   "Light": 0.040639269406392696,
+   "Max growth rate": 0.021232876712328767
+  },
+  "flags": [
+   [
+    "Evaporative Cooling Limited",
+    "water quantity limits the media in 74% of active hours"
+   ]
+  ],
+  "validation": [
+   {
+    "target": "T1 Condensate covers 100% of daily reactor need + 20% margin",
+    "status": "Pass",
+    "value": "100.0% of days meet it; overall coverage 100.0%",
+    "basis": "Simulated (Validation Target, not a guaranteed result)"
+   },
+   {
+    "target": "T2 Growth in conditioned condensate >= 80% of control",
+    "status": "Warning",
+    "value": "Not evaluable by simulation - requires the paired flask/panel experiment",
+    "basis": "Experiment required"
+   },
+   {
+    "target": "T3 Reactor temperature within 25-35 C for >= 90% of time",
+    "status": "Fail",
+    "value": "45.3% of hours (max 48.0 C)",
+    "basis": "Simulated with Low-confidence thermal inputs (alpha, U)"
+   },
+   {
+    "target": "T4a No persistent decline in algae density (model)",
+    "status": "Fail",
+    "value": "longest run of declining days = 11 (after a 14-day start-up)",
+    "basis": "Simulated"
+   },
+   {
+    "target": "T4b No visible contamination",
+    "status": "Warning",
+    "value": "Not evaluable by simulation - requires observation/microscopy",
+    "basis": "Experiment required"
+   }
+  ],
+  "health_counts": {
+   "Warning": 357,
+   "Critical": 8
+  },
+  "Tr_max": 48.00874630835532,
+  "Tr_in_range": 0.45251141552511415,
+  "X_end": 0.03876427269940589,
+  "X_mean": 0.043612406541515936,
+  "hyd": {
+   "Q_Lph": 68.30330565132695,
+   "static_bar": 0.0977723005,
+   "v_t": 4.428690551393267,
+   "h_net": 0.9871957650489294,
+   "v_o": 2.6841503022037716,
+   "h_loss": 0.01280423495107059
+  },
+  "mean_overflow_Lph": 4.178582627598479,
+  "conf": [
+   {
+    "output": "Condensate recovered",
+    "value": 37623.71,
+    "unit": "L",
+    "confidence": "Low",
+    "measure_first": "Outdoor-air fraction at coil inlet; Indoor (return) relative humidity; AC nominal cooling capacity; Load model: balance temperature (RTF = min_rtf)"
+   },
+   {
+    "output": "Water used in reactor (from condensate)",
+    "value": 1540.363,
+    "unit": "L",
+    "confidence": "Low",
+    "measure_first": "Outdoor-air fraction at coil inlet; Indoor (return) relative humidity; AC nominal cooling capacity; Load model: balance temperature (RTF = min_rtf)"
+   },
+   {
+    "output": "Overflow reused for condenser cooling (evaporated)",
+    "value": 33753.118,
+    "unit": "L",
+    "confidence": "Low",
+    "measure_first": "Outdoor-air fraction at coil inlet; Indoor (return) relative humidity; AC nominal cooling capacity; Load model: balance temperature (RTF = min_rtf)"
+   },
+   {
+    "output": "Biomass produced",
+    "value": 72.699,
+    "unit": "g",
+    "confidence": "Low",
+    "measure_first": "Biomass-specific light absorption coefficient; Fraction of photons above the validated PPFD credited to growth; Panel solar absorptance (thermal); Heat-loss coefficient per face"
+   },
+   {
+    "output": "Gross Biological CO2 Fixation",
+    "value": 133.186,
+    "unit": "g CO2",
+    "confidence": "Low",
+    "measure_first": "Biomass-specific light absorption coefficient; Fraction of photons above the validated PPFD credited to growth; Panel solar absorptance (thermal); Heat-loss coefficient per face"
+   },
+   {
+    "output": "Gross O2 produced (stoichiometric)",
+    "value": 134.784,
+    "unit": "g O2",
+    "confidence": "Low",
+    "measure_first": "Biomass-specific light absorption coefficient; Fraction of photons above the validated PPFD credited to growth; Panel solar absorptance (thermal); Heat-loss coefficient per face"
+   },
+   {
+    "output": "Condenser inlet air drop (mean, AC on)",
+    "value": 1.557,
+    "unit": "K",
+    "confidence": "Low",
+    "measure_first": "Outdoor-air fraction at coil inlet; Indoor (return) relative humidity; AC nominal cooling capacity; Load model: balance temperature (RTF = min_rtf)"
+   },
+   {
+    "output": "HVAC electricity saved (gross)",
+    "value": 617.404,
+    "unit": "kWh",
+    "confidence": "Low",
+    "measure_first": "Outdoor-air fraction at coil inlet; Indoor (return) relative humidity; AC nominal cooling capacity; Load model: balance temperature (RTF = min_rtf)"
+   },
+   {
+    "output": "PBR + control electricity",
+    "value": 83.721,
+    "unit": "kWh",
+    "confidence": "Low",
+    "measure_first": "Small pump wire-to-water efficiency"
+   },
+   {
+    "output": "Net electricity impact",
+    "value": 287.392,
+    "unit": "kWh",
+    "confidence": "Low",
+    "measure_first": "Outdoor-air fraction at coil inlet; Indoor (return) relative humidity; AC nominal cooling capacity; Load model: balance temperature (RTF = min_rtf)"
+   },
+   {
+    "output": "Net annual benefit",
+    "value": 91.965,
+    "unit": "SAR/yr",
+    "confidence": "Low",
+    "measure_first": "Outdoor-air fraction at coil inlet; Indoor (return) relative humidity; AC nominal cooling capacity; Load model: balance temperature (RTF = min_rtf)"
+   },
+   {
+    "output": "Net Carbon Impact",
+    "value": null,
+    "unit": "kg CO2e",
+    "confidence": "Not Yet Quantified",
+    "measure_first": "embodied carbon of equipment, nutrients, maintenance, lifetime"
+   }
+  ],
+  "monthly": [
+   {
+    "month": 1,
+    "T": 23.438,
+    "RH": 62.869,
+    "dT_psy": 5.153,
+    "condensate_L": 1933.741,
+    "overflow_L": 1785.219,
+    "media_evap_L": 1757.956,
+    "dT_cond_active": 1.279,
+    "hvac_saving_kWh": 26.019,
+    "fan_kWh": 15.817,
+    "pbr_kWh": 5.251,
+    "ctrl_kWh": 1.86,
+    "T_r_max": 42.273,
+    "net_biomass_g": 5.124,
+    "hours": 744
+   },
+   {
+    "month": 2,
+    "T": 24.008,
+    "RH": 63.215,
+    "dT_psy": 5.215,
+    "condensate_L": 1857.09,
+    "overflow_L": 1739.223,
+    "media_evap_L": 1683.485,
+    "dT_cond_active": 1.308,
+    "hvac_saving_kWh": 25.582,
+    "fan_kWh": 14.778,
+    "pbr_kWh": 4.742,
+    "ctrl_kWh": 1.68,
+    "T_r_max": 42.071,
+    "net_biomass_g": 7.726,
+    "hours": 672
+   },
+   {
+    "month": 3,
+    "T": 25.533,
+    "RH": 63.489,
+    "dT_psy": 5.399,
+    "condensate_L": 2400.725,
+    "overflow_L": 2270.39,
+    "media_evap_L": 2152.451,
+    "dT_cond_active": 1.382,
+    "hvac_saving_kWh": 34.687,
+    "fan_kWh": 17.816,
+    "pbr_kWh": 5.251,
+    "ctrl_kWh": 1.86,
+    "T_r_max": 41.485,
+    "net_biomass_g": 8.184,
+    "hours": 744
+   },
+   {
+    "month": 4,
+    "T": 28.226,
+    "RH": 60.301,
+    "dT_psy": 6.251,
+    "condensate_L": 2839.878,
+    "overflow_L": 2713.612,
+    "media_evap_L": 2657.547,
+    "dT_cond_active": 1.572,
+    "hvac_saving_kWh": 46.308,
+    "fan_kWh": 19.727,
+    "pbr_kWh": 5.081,
+    "ctrl_kWh": 1.8,
+    "T_r_max": 41.54,
+    "net_biomass_g": 7.522,
+    "hours": 720
+   },
+   {
+    "month": 5,
+    "T": 30.611,
+    "RH": 59.327,
+    "dT_psy": 6.756,
+    "condensate_L": 3466.529,
+    "overflow_L": 3335.869,
+    "media_evap_L": 3272.435,
+    "dT_cond_active": 1.696,
+    "hvac_saving_kWh": 61.28,
+    "fan_kWh": 22.661,
+    "pbr_kWh": 5.251,
+    "ctrl_kWh": 1.86,
+    "T_r_max": 41.641,
+    "net_biomass_g": 7.891,
+    "hours": 744
+   },
+   {
+    "month": 6,
+    "T": 31.597,
+    "RH": 61.589,
+    "dT_psy": 6.511,
+    "condensate_L": 3666.013,
+    "overflow_L": 3539.529,
+    "media_evap_L": 3346.942,
+    "dT_cond_active": 1.707,
+    "hvac_saving_kWh": 64.96,
+    "fan_kWh": 22.84,
+    "pbr_kWh": 5.081,
+    "ctrl_kWh": 1.8,
+    "T_r_max": 42.423,
+    "net_biomass_g": 7.279,
+    "hours": 720
+   },
+   {
+    "month": 7,
+    "T": 33.072,
+    "RH": 55.941,
+    "dT_psy": 7.701,
+    "condensate_L": 3961.632,
+    "overflow_L": 3830.321,
+    "media_evap_L": 3830.321,
+    "dT_cond_active": 1.816,
+    "hvac_saving_kWh": 76.625,
+    "fan_kWh": 25.008,
+    "pbr_kWh": 5.251,
+    "ctrl_kWh": 1.86,
+    "T_r_max": 43.506,
+    "net_biomass_g": 5.993,
+    "hours": 744
+   },
+   {
+    "month": 8,
+    "T": 33.284,
+    "RH": 61.561,
+    "dT_psy": 6.584,
+    "condensate_L": 4273.285,
+    "overflow_L": 4142.162,
+    "media_evap_L": 4063.412,
+    "dT_cond_active": 1.899,
+    "hvac_saving_kWh": 81.523,
+    "fan_kWh": 25.21,
+    "pbr_kWh": 5.251,
+    "ctrl_kWh": 1.86,
+    "T_r_max": 44.626,
+    "net_biomass_g": 4.922,
+    "hours": 744
+   },
+   {
+    "month": 9,
+    "T": 31.984,
+    "RH": 69.951,
+    "dT_psy": 4.966,
+    "condensate_L": 4087.988,
+    "overflow_L": 3961.343,
+    "media_evap_L": 3352.476,
+    "dT_cond_active": 1.649,
+    "hvac_saving_kWh": 66.067,
+    "fan_kWh": 23.197,
+    "pbr_kWh": 5.081,
+    "ctrl_kWh": 1.8,
+    "T_r_max": 45.962,
+    "net_biomass_g": 3.854,
+    "hours": 720
+   },
+   {
+    "month": 10,
+    "T": 30.38,
+    "RH": 69.677,
+    "dT_psy": 4.952,
+    "condensate_L": 3755.161,
+    "overflow_L": 3623.771,
+    "media_evap_L": 2997.166,
+    "dT_cond_active": 1.5,
+    "hvac_saving_kWh": 57.156,
+    "fan_kWh": 22.44,
+    "pbr_kWh": 5.251,
+    "ctrl_kWh": 1.86,
+    "T_r_max": 48.009,
+    "net_biomass_g": 3.809,
+    "hours": 744
+   },
+   {
+    "month": 11,
+    "T": 27.723,
+    "RH": 68.145,
+    "dT_psy": 4.869,
+    "condensate_L": 2964.97,
+    "overflow_L": 2838.035,
+    "media_evap_L": 2499.662,
+    "dT_cond_active": 1.471,
+    "hvac_saving_kWh": 43.302,
+    "fan_kWh": 19.263,
+    "pbr_kWh": 5.081,
+    "ctrl_kWh": 1.8,
+    "T_r_max": 46.662,
+    "net_biomass_g": 4.015,
+    "hours": 720
+   },
+   {
+    "month": 12,
+    "T": 25.238,
+    "RH": 65.951,
+    "dT_psy": 4.917,
+    "condensate_L": 2416.698,
+    "overflow_L": 2285.872,
+    "media_evap_L": 2139.264,
+    "dT_cond_active": 1.392,
+    "hvac_saving_kWh": 33.895,
+    "fan_kWh": 17.534,
+    "pbr_kWh": 5.251,
+    "ctrl_kWh": 1.86,
+    "T_r_max": 44.459,
+    "net_biomass_g": 6.381,
+    "hours": 744
+   }
+  ]
+ },
+ "Ref, media at 3 m/s face velocity": {
+  "days": 365.0,
+  "condensate_L": 15049.4839569835,
+  "condensate_to_reactor_L": 1540.3632336562785,
+  "reactor_demand_L": 1540.3632336562785,
+  "external_L": 0.0,
+  "coverage_pct": 100.0,
+  "overflow_L": 13491.120723327222,
+  "media_evap_L": 12573.506609850321,
+  "media_drain_L": 917.6141134769006,
+  "spill_L": 0.0,
+  "mean_T_cond_before": 28.78448116438356,
+  "mean_T_cond_after": 27.332813268412934,
+  "mean_dT_cond_active": 1.4516678959706262,
+  "hvac_before_kWh": 9947.479207348359,
+  "hvac_gross_saving_kWh": 230.0400541576637,
+  "hvac_saving_carnot_kWh": 423.9735354443467,
+  "fan_penalty_kWh": 394.06666005094064,
+  "hvac_net_saving_kWh": -164.02660589327695,
+  "pbr_only_kWh": 61.82057142857143,
+  "control_kWh": 21.9,
+  "pbr_kWh": 83.72057142857142,
+  "net_electricity_kWh": -247.7471773218484,
+  "biomass_produced_g": 72.69856529573228,
+  "biomass_harvested_g": 76.31519298634514,
+  "vol_productivity_g_L_d": 0.009958707574757846,
+  "areal_productivity_g_m2_d": 0.3983483029903139,
+  "co2_supplied_g": 1572.9851035042143,
+  "co2_transferable_g": 550.544786226475,
+  "co2_gross_uptake_g": 204.62622065468116,
+  "co2_carbon_method_g": 133.18587794937483,
+  "co2_stoich_method_g": 136.6733027559767,
+  "co2_diff_pct": 2.5516503488823172,
+  "o2_stoich_g": 134.78394153817277,
+  "o2_pq_g": 131.6977696100518,
+  "o2_diff_pct": 2.289717820165478,
+  "o2_L": 104.51137752681736,
+  "cue_pct": 8.467078146682399,
+  "carbon_in_biomass_g": 36.34928264786614,
+  "net_electricity_co2_kg": -140.72039671880987,
+  "bg11_chem_g": 2500.324432000005,
+  "cooling_L": 0.0,
+  "net_SAR": -79.27909674299148,
+  "elec_SAR": -52.488513885848626,
+  "opex_SAR": 26.790582857142855,
+  "allowable_capex": 0.0,
+  "bio_limit": "Carbon Limited",
+  "bio_share": 0.5828767123287671,
+  "bio_shares": {
+   "Carbon": 0.5828767123287671,
+   "Temperature": 0.3552511415525114,
+   "Light": 0.040639269406392696,
+   "Max growth rate": 0.021232876712328767
+  },
+  "flags": [
+   [
+    "Evaporative Cooling Limited",
+    "water quantity limits the media in 73% of active hours"
+   ],
+   [
+    "Energy Limited",
+    "net electricity impact -248 kWh (system uses more than it saves)"
+   ],
+   [
+    "Cost Limited",
+    "net annual benefit -79 SAR <= 0"
+   ]
+  ],
+  "validation": [
+   {
+    "target": "T1 Condensate covers 100% of daily reactor need + 20% margin",
+    "status": "Pass",
+    "value": "100.0% of days meet it; overall coverage 100.0%",
+    "basis": "Simulated (Validation Target, not a guaranteed result)"
+   },
+   {
+    "target": "T2 Growth in conditioned condensate >= 80% of control",
+    "status": "Warning",
+    "value": "Not evaluable by simulation - requires the paired flask/panel experiment",
+    "basis": "Experiment required"
+   },
+   {
+    "target": "T3 Reactor temperature within 25-35 C for >= 90% of time",
+    "status": "Fail",
+    "value": "45.3% of hours (max 48.0 C)",
+    "basis": "Simulated with Low-confidence thermal inputs (alpha, U)"
+   },
+   {
+    "target": "T4a No persistent decline in algae density (model)",
+    "status": "Fail",
+    "value": "longest run of declining days = 11 (after a 14-day start-up)",
+    "basis": "Simulated"
+   },
+   {
+    "target": "T4b No visible contamination",
+    "status": "Warning",
+    "value": "Not evaluable by simulation - requires observation/microscopy",
+    "basis": "Experiment required"
+   }
+  ],
+  "health_counts": {
+   "Warning": 357,
+   "Critical": 8
+  },
+  "Tr_max": 48.00874630835532,
+  "Tr_in_range": 0.45251141552511415,
+  "X_end": 0.03876427269940589,
+  "X_mean": 0.043612406541515936,
+  "hyd": {
+   "Q_Lph": 68.30330565132695,
+   "static_bar": 0.0977723005,
+   "v_t": 4.428690551393267,
+   "h_net": 0.9871957650489294,
+   "v_o": 2.6841503022037716,
+   "h_loss": 0.01280423495107059
+  },
+  "mean_overflow_Lph": 1.6577931584329346,
+  "conf": [
+   {
+    "output": "Condensate recovered",
+    "value": 15049.484,
+    "unit": "L",
+    "confidence": "Low",
+    "measure_first": "Outdoor-air fraction at coil inlet; Indoor (return) relative humidity; Load model: balance temperature (RTF = min_rtf); Load model: minimum runtime fraction"
+   },
+   {
+    "output": "Water used in reactor (from condensate)",
+    "value": 1540.363,
+    "unit": "L",
+    "confidence": "Low",
+    "measure_first": "Outdoor-air fraction at coil inlet; Indoor (return) relative humidity; Load model: balance temperature (RTF = min_rtf); Load model: minimum runtime fraction"
+   },
+   {
+    "output": "Overflow reused for condenser cooling (evaporated)",
+    "value": 12573.507,
+    "unit": "L",
+    "confidence": "Low",
+    "measure_first": "Outdoor-air fraction at coil inlet; Indoor (return) relative humidity; Load model: balance temperature (RTF = min_rtf); Load model: minimum runtime fraction"
+   },
+   {
+    "output": "Biomass produced",
+    "value": 72.699,
+    "unit": "g",
+    "confidence": "Low",
+    "measure_first": "Biomass-specific light absorption coefficient; Fraction of photons above the validated PPFD credited to growth; Panel solar absorptance (thermal); Heat-loss coefficient per face"
+   },
+   {
+    "output": "Gross Biological CO2 Fixation",
+    "value": 133.186,
+    "unit": "g CO2",
+    "confidence": "Low",
+    "measure_first": "Biomass-specific light absorption coefficient; Fraction of photons above the validated PPFD credited to growth; Panel solar absorptance (thermal); Heat-loss coefficient per face"
+   },
+   {
+    "output": "Gross O2 produced (stoichiometric)",
+    "value": 134.784,
+    "unit": "g O2",
+    "confidence": "Low",
+    "measure_first": "Biomass-specific light absorption coefficient; Fraction of photons above the validated PPFD credited to growth; Panel solar absorptance (thermal); Heat-loss coefficient per face"
+   },
+   {
+    "output": "Condenser inlet air drop (mean, AC on)",
+    "value": 1.452,
+    "unit": "K",
+    "confidence": "Low",
+    "measure_first": "Outdoor-air fraction at coil inlet; Indoor (return) relative humidity; Load model: balance temperature (RTF = min_rtf); Load model: minimum runtime fraction"
+   },
+   {
+    "output": "HVAC electricity saved (gross)",
+    "value": 230.04,
+    "unit": "kWh",
+    "confidence": "Low",
+    "measure_first": "Outdoor-air fraction at coil inlet; Indoor (return) relative humidity; Load model: balance temperature (RTF = min_rtf); Load model: minimum runtime fraction"
+   },
+   {
+    "output": "PBR + control electricity",
+    "value": 83.721,
+    "unit": "kWh",
+    "confidence": "Low",
+    "measure_first": "Small pump wire-to-water efficiency"
+   },
+   {
+    "output": "Net electricity impact",
+    "value": -247.747,
+    "unit": "kWh",
+    "confidence": "Low",
+    "measure_first": "Outdoor-air fraction at coil inlet; Indoor (return) relative humidity; Load model: balance temperature (RTF = min_rtf); Load model: minimum runtime fraction"
+   },
+   {
+    "output": "Net annual benefit",
+    "value": -79.279,
+    "unit": "SAR/yr",
+    "confidence": "Low",
+    "measure_first": "Outdoor-air fraction at coil inlet; Indoor (return) relative humidity; Load model: balance temperature (RTF = min_rtf); Load model: minimum runtime fraction"
+   },
+   {
+    "output": "Net Carbon Impact",
+    "value": null,
+    "unit": "kg CO2e",
+    "confidence": "Not Yet Quantified",
+    "measure_first": "embodied carbon of equipment, nutrients, maintenance, lifetime"
+   }
+  ],
+  "monthly": [
+   {
+    "month": 1,
+    "T": 23.438,
+    "RH": 62.869,
+    "dT_psy": 5.153,
+    "condensate_L": 773.496,
+    "overflow_L": 624.975,
+    "media_evap_L": 614.438,
+    "dT_cond_active": 1.125,
+    "hvac_saving_kWh": 9.084,
+    "fan_kWh": 25.307,
+    "pbr_kWh": 5.251,
+    "ctrl_kWh": 1.86,
+    "T_r_max": 42.273,
+    "net_biomass_g": 5.124,
+    "hours": 744
+   },
+   {
+    "month": 2,
+    "T": 24.008,
+    "RH": 63.215,
+    "dT_psy": 5.215,
+    "condensate_L": 742.836,
+    "overflow_L": 624.969,
+    "media_evap_L": 603.187,
+    "dT_cond_active": 1.176,
+    "hvac_saving_kWh": 9.172,
+    "fan_kWh": 23.645,
+    "pbr_kWh": 4.742,
+    "ctrl_kWh": 1.68,
+    "T_r_max": 42.071,
+    "net_biomass_g": 7.726,
+    "hours": 672
+   },
+   {
+    "month": 3,
+    "T": 25.533,
+    "RH": 63.489,
+    "dT_psy": 5.399,
+    "condensate_L": 960.29,
+    "overflow_L": 829.955,
+    "media_evap_L": 783.456,
+    "dT_cond_active": 1.263,
+    "hvac_saving_kWh": 12.621,
+    "fan_kWh": 28.506,
+    "pbr_kWh": 5.251,
+    "ctrl_kWh": 1.86,
+    "T_r_max": 41.485,
+    "net_biomass_g": 8.184,
+    "hours": 744
+   },
+   {
+    "month": 4,
+    "T": 28.226,
+    "RH": 60.301,
+    "dT_psy": 6.251,
+    "condensate_L": 1135.951,
+    "overflow_L": 1009.685,
+    "media_evap_L": 987.718,
+    "dT_cond_active": 1.468,
+    "hvac_saving_kWh": 17.174,
+    "fan_kWh": 31.564,
+    "pbr_kWh": 5.081,
+    "ctrl_kWh": 1.8,
+    "T_r_max": 41.54,
+    "net_biomass_g": 7.522,
+    "hours": 720
+   },
+   {
+    "month": 5,
+    "T": 30.611,
+    "RH": 59.327,
+    "dT_psy": 6.756,
+    "condensate_L": 1386.612,
+    "overflow_L": 1255.951,
+    "media_evap_L": 1231.001,
+    "dT_cond_active": 1.603,
+    "hvac_saving_kWh": 22.987,
+    "fan_kWh": 36.257,
+    "pbr_kWh": 5.251,
+    "ctrl_kWh": 1.86,
+    "T_r_max": 41.641,
+    "net_biomass_g": 7.891,
+    "hours": 744
+   },
+   {
+    "month": 6,
+    "T": 31.597,
+    "RH": 61.589,
+    "dT_psy": 6.511,
+    "condensate_L": 1466.405,
+    "overflow_L": 1339.921,
+    "media_evap_L": 1263.608,
+    "dT_cond_active": 1.618,
+    "hvac_saving_kWh": 24.463,
+    "fan_kWh": 36.543,
+    "pbr_kWh": 5.081,
+    "ctrl_kWh": 1.8,
+    "T_r_max": 42.423,
+    "net_biomass_g": 7.279,
+    "hours": 720
+   },
+   {
+    "month": 7,
+    "T": 33.072,
+    "RH": 55.941,
+    "dT_psy": 7.701,
+    "condensate_L": 1584.653,
+    "overflow_L": 1453.342,
+    "media_evap_L": 1453.342,
+    "dT_cond_active": 1.73,
+    "hvac_saving_kWh": 28.994,
+    "fan_kWh": 40.013,
+    "pbr_kWh": 5.251,
+    "ctrl_kWh": 1.86,
+    "T_r_max": 43.506,
+    "net_biomass_g": 5.993,
+    "hours": 744
+   },
+   {
+    "month": 8,
+    "T": 33.284,
+    "RH": 61.561,
+    "dT_psy": 6.584,
+    "condensate_L": 1709.314,
+    "overflow_L": 1578.191,
+    "media_evap_L": 1547.261,
+    "dT_cond_active": 1.813,
+    "hvac_saving_kWh": 30.969,
+    "fan_kWh": 40.336,
+    "pbr_kWh": 5.251,
+    "ctrl_kWh": 1.86,
+    "T_r_max": 44.626,
+    "net_biomass_g": 4.922,
+    "hours": 744
+   },
+   {
+    "month": 9,
+    "T": 31.984,
+    "RH": 69.951,
+    "dT_psy": 4.966,
+    "condensate_L": 1635.195,
+    "overflow_L": 1508.55,
+    "media_evap_L": 1266.006,
+    "dT_cond_active": 1.561,
+    "hvac_saving_kWh": 24.909,
+    "fan_kWh": 37.115,
+    "pbr_kWh": 5.081,
+    "ctrl_kWh": 1.8,
+    "T_r_max": 45.962,
+    "net_biomass_g": 3.854,
+    "hours": 720
+   },
+   {
+    "month": 10,
+    "T": 30.38,
+    "RH": 69.677,
+    "dT_psy": 4.952,
+    "condensate_L": 1502.064,
+    "overflow_L": 1370.675,
+    "media_evap_L": 1121.031,
+    "dT_cond_active": 1.406,
+    "hvac_saving_kWh": 21.349,
+    "fan_kWh": 35.903,
+    "pbr_kWh": 5.251,
+    "ctrl_kWh": 1.86,
+    "T_r_max": 48.009,
+    "net_biomass_g": 3.809,
+    "hours": 744
+   },
+   {
+    "month": 11,
+    "T": 27.723,
+    "RH": 68.145,
+    "dT_psy": 4.869,
+    "condensate_L": 1185.988,
+    "overflow_L": 1059.053,
+    "media_evap_L": 924.577,
+    "dT_cond_active": 1.365,
+    "hvac_saving_kWh": 15.997,
+    "fan_kWh": 30.821,
+    "pbr_kWh": 5.081,
+    "ctrl_kWh": 1.8,
+    "T_r_max": 46.662,
+    "net_biomass_g": 4.015,
+    "hours": 720
+   },
+   {
+    "month": 12,
+    "T": 25.238,
+    "RH": 65.951,
+    "dT_psy": 4.917,
+    "condensate_L": 966.679,
+    "overflow_L": 835.853,
+    "media_evap_L": 777.882,
+    "dT_cond_active": 1.27,
+    "hvac_saving_kWh": 12.319,
+    "fan_kWh": 28.055,
+    "pbr_kWh": 5.251,
+    "ctrl_kWh": 1.86,
+    "T_r_max": 44.459,
+    "net_biomass_g": 6.381,
+    "hours": 744
+   }
+  ]
+ },
+ "Ref, measured 1.5 L/h (example)": {
+  "days": 365.0,
+  "condensate_L": 13140.0,
+  "condensate_to_reactor_L": 1540.3632336562785,
+  "reactor_demand_L": 1540.3632336562785,
+  "external_L": 0.0,
+  "coverage_pct": 100.0,
+  "overflow_L": 11581.63676634372,
+  "media_evap_L": 10262.893299808915,
+  "media_drain_L": 1318.7434665348073,
+  "spill_L": 0.0,
+  "mean_T_cond_before": 28.78448116438356,
+  "mean_T_cond_after": 27.53684711377256,
+  "mean_dT_cond_active": 1.247634050611002,
+  "hvac_before_kWh": 9947.479207348359,
+  "hvac_gross_saving_kWh": 180.85435956655056,
+  "hvac_saving_carnot_kWh": 344.98265323809267,
+  "fan_penalty_kWh": 98.51666501273516,
+  "hvac_net_saving_kWh": 82.3376945538154,
+  "pbr_only_kWh": 61.82057142857143,
+  "control_kWh": 21.9,
+  "pbr_kWh": 83.72057142857142,
+  "net_electricity_kWh": -1.382876874756029,
+  "biomass_produced_g": 72.69856529573228,
+  "biomass_harvested_g": 76.31519298634514,
+  "vol_productivity_g_L_d": 0.009958707574757846,
+  "areal_productivity_g_m2_d": 0.3983483029903139,
+  "co2_supplied_g": 1572.9851035042143,
+  "co2_transferable_g": 550.544786226475,
+  "co2_gross_uptake_g": 204.62622065468116,
+  "co2_carbon_method_g": 133.18587794937483,
+  "co2_stoich_method_g": 136.6733027559767,
+  "co2_diff_pct": 2.5516503488823172,
+  "o2_stoich_g": 134.78394153817277,
+  "o2_pq_g": 131.6977696100518,
+  "o2_diff_pct": 2.289717820165478,
+  "o2_L": 104.51137752681736,
+  "cue_pct": 8.467078146682399,
+  "carbon_in_biomass_g": 36.34928264786614,
+  "net_electricity_co2_kg": -0.7854740648614243,
+  "bg11_chem_g": 2500.324432000005,
+  "cooling_L": 0.0,
+  "net_SAR": -0.44252059992192727,
+  "elec_SAR": 26.348062257220928,
+  "opex_SAR": 26.790582857142855,
+  "allowable_capex": 0.0,
+  "bio_limit": "Carbon Limited",
+  "bio_share": 0.5828767123287671,
+  "bio_shares": {
+   "Carbon": 0.5828767123287671,
+   "Temperature": 0.3552511415525114,
+   "Light": 0.040639269406392696,
+   "Max growth rate": 0.021232876712328767
+  },
+  "flags": [
+   [
+    "Evaporative Cooling Limited",
+    "water quantity limits the media in 70% of active hours"
+   ],
+   [
+    "Energy Limited",
+    "net electricity impact -1 kWh (system uses more than it saves)"
+   ],
+   [
+    "Cost Limited",
+    "net annual benefit -0 SAR <= 0"
+   ]
+  ],
+  "validation": [
+   {
+    "target": "T1 Condensate covers 100% of daily reactor need + 20% margin",
+    "status": "Pass",
+    "value": "100.0% of days meet it; overall coverage 100.0%",
+    "basis": "Simulated (Validation Target, not a guaranteed result)"
+   },
+   {
+    "target": "T2 Growth in conditioned condensate >= 80% of control",
+    "status": "Warning",
+    "value": "Not evaluable by simulation - requires the paired flask/panel experiment",
+    "basis": "Experiment required"
+   },
+   {
+    "target": "T3 Reactor temperature within 25-35 C for >= 90% of time",
+    "status": "Fail",
+    "value": "45.3% of hours (max 48.0 C)",
+    "basis": "Simulated with Low-confidence thermal inputs (alpha, U)"
+   },
+   {
+    "target": "T4a No persistent decline in algae density (model)",
+    "status": "Fail",
+    "value": "longest run of declining days = 11 (after a 14-day start-up)",
+    "basis": "Simulated"
+   },
+   {
+    "target": "T4b No visible contamination",
+    "status": "Warning",
+    "value": "Not evaluable by simulation - requires observation/microscopy",
+    "basis": "Experiment required"
+   }
+  ],
+  "health_counts": {
+   "Warning": 357,
+   "Critical": 8
+  },
+  "Tr_max": 48.00874630835532,
+  "Tr_in_range": 0.45251141552511415,
+  "X_end": 0.03876427269940589,
+  "X_mean": 0.043612406541515936,
+  "hyd": {
+   "Q_Lph": 68.30330565132695,
+   "static_bar": 0.0977723005,
+   "v_t": 4.428690551393267,
+   "h_net": 0.9871957650489294,
+   "v_o": 2.6841503022037716,
+   "h_loss": 0.01280423495107059
+  },
+  "mean_overflow_Lph": 1.4444545730037066,
+  "conf": [
+   {
+    "output": "Condensate recovered",
+    "value": 13140.0,
+    "unit": "L",
+    "confidence": "High",
+    "measure_first": "-"
+   },
+   {
+    "output": "Water used in reactor (from condensate)",
+    "value": 1540.363,
+    "unit": "L",
+    "confidence": "Medium",
+    "measure_first": "-"
+   },
+   {
+    "output": "Overflow reused for condenser cooling (evaporated)",
+    "value": 10262.893,
+    "unit": "L",
+    "confidence": "Low-Medium",
+    "measure_first": "-"
+   },
+   {
+    "output": "Biomass produced",
+    "value": 72.699,
+    "unit": "g",
+    "confidence": "Low",
+    "measure_first": "Biomass-specific light absorption coefficient; Fraction of photons above the validated PPFD credited to growth; Panel solar absorptance (thermal); Heat-loss coefficient per face"
+   },
+   {
+    "output": "Gross Biological CO2 Fixation",
+    "value": 133.186,
+    "unit": "g CO2",
+    "confidence": "Low",
+    "measure_first": "Biomass-specific light absorption coefficient; Fraction of photons above the validated PPFD credited to growth; Panel solar absorptance (thermal); Heat-loss coefficient per face"
+   },
+   {
+    "output": "Gross O2 produced (stoichiometric)",
+    "value": 134.784,
+    "unit": "g O2",
+    "confidence": "Low",
+    "measure_first": "Biomass-specific light absorption coefficient; Fraction of photons above the validated PPFD credited to growth; Panel solar absorptance (thermal); Heat-loss coefficient per face"
+   },
+   {
+    "output": "Condenser inlet air drop (mean, AC on)",
+    "value": 1.248,
+    "unit": "K",
+    "confidence": "Low-Medium",
+    "measure_first": "-"
+   },
+   {
+    "output": "HVAC electricity saved (gross)",
+    "value": 180.854,
+    "unit": "kWh",
+    "confidence": "Low-Medium",
+    "measure_first": "-"
+   },
+   {
+    "output": "PBR + control electricity",
+    "value": 83.721,
+    "unit": "kWh",
+    "confidence": "Low",
+    "measure_first": "Small pump wire-to-water efficiency"
+   },
+   {
+    "output": "Net electricity impact",
+    "value": -1.383,
+    "unit": "kWh",
+    "confidence": "Low",
+    "measure_first": "Condenser fan total efficiency; Small pump wire-to-water efficiency"
+   },
+   {
+    "output": "Net annual benefit",
+    "value": -0.443,
+    "unit": "SAR/yr",
+    "confidence": "Low",
+    "measure_first": "Condenser fan total efficiency; Small pump wire-to-water efficiency"
+   },
+   {
+    "output": "Net Carbon Impact",
+    "value": null,
+    "unit": "kg CO2e",
+    "confidence": "Not Yet Quantified",
+    "measure_first": "embodied carbon of equipment, nutrients, maintenance, lifetime"
+   }
+  ],
+  "monthly": [
+   {
+    "month": 1,
+    "T": 23.438,
+    "RH": 62.869,
+    "dT_psy": 5.153,
+    "condensate_L": 1116.0,
+    "overflow_L": 967.479,
+    "media_evap_L": 790.434,
+    "dT_cond_active": 1.444,
+    "hvac_saving_kWh": 11.66,
+    "fan_kWh": 6.327,
+    "pbr_kWh": 5.251,
+    "ctrl_kWh": 1.86,
+    "T_r_max": 42.273,
+    "net_biomass_g": 5.124,
+    "hours": 744
+   },
+   {
+    "month": 2,
+    "T": 24.008,
+    "RH": 63.215,
+    "dT_psy": 5.215,
+    "condensate_L": 1008.0,
+    "overflow_L": 890.134,
+    "media_evap_L": 717.279,
+    "dT_cond_active": 1.404,
+    "hvac_saving_kWh": 10.839,
+    "fan_kWh": 5.911,
+    "pbr_kWh": 4.742,
+    "ctrl_kWh": 1.68,
+    "T_r_max": 42.071,
+    "net_biomass_g": 7.726,
+    "hours": 672
+   },
+   {
+    "month": 3,
+    "T": 25.533,
+    "RH": 63.489,
+    "dT_psy": 5.399,
+    "condensate_L": 1116.0,
+    "overflow_L": 985.665,
+    "media_evap_L": 813.752,
+    "dT_cond_active": 1.331,
+    "hvac_saving_kWh": 12.952,
+    "fan_kWh": 7.126,
+    "pbr_kWh": 5.251,
+    "ctrl_kWh": 1.86,
+    "T_r_max": 41.485,
+    "net_biomass_g": 8.184,
+    "hours": 744
+   },
+   {
+    "month": 4,
+    "T": 28.226,
+    "RH": 60.301,
+    "dT_psy": 6.251,
+    "condensate_L": 1080.0,
+    "overflow_L": 953.734,
+    "media_evap_L": 884.854,
+    "dT_cond_active": 1.345,
+    "hvac_saving_kWh": 15.119,
+    "fan_kWh": 7.891,
+    "pbr_kWh": 5.081,
+    "ctrl_kWh": 1.8,
+    "T_r_max": 41.54,
+    "net_biomass_g": 7.522,
+    "hours": 720
+   },
+   {
+    "month": 5,
+    "T": 30.611,
+    "RH": 59.327,
+    "dT_psy": 6.756,
+    "condensate_L": 1116.0,
+    "overflow_L": 985.34,
+    "media_evap_L": 960.342,
+    "dT_cond_active": 1.286,
+    "hvac_saving_kWh": 17.549,
+    "fan_kWh": 9.064,
+    "pbr_kWh": 5.251,
+    "ctrl_kWh": 1.86,
+    "T_r_max": 41.641,
+    "net_biomass_g": 7.891,
+    "hours": 744
+   },
+   {
+    "month": 6,
+    "T": 31.597,
+    "RH": 61.589,
+    "dT_psy": 6.511,
+    "condensate_L": 1080.0,
+    "overflow_L": 953.515,
+    "media_evap_L": 908.772,
+    "dT_cond_active": 1.203,
+    "hvac_saving_kWh": 17.157,
+    "fan_kWh": 9.136,
+    "pbr_kWh": 5.081,
+    "ctrl_kWh": 1.8,
+    "T_r_max": 42.423,
+    "net_biomass_g": 7.279,
+    "hours": 720
+   },
+   {
+    "month": 7,
+    "T": 33.072,
+    "RH": 55.941,
+    "dT_psy": 7.701,
+    "condensate_L": 1116.0,
+    "overflow_L": 984.689,
+    "media_evap_L": 984.689,
+    "dT_cond_active": 1.199,
+    "hvac_saving_kWh": 19.287,
+    "fan_kWh": 10.003,
+    "pbr_kWh": 5.251,
+    "ctrl_kWh": 1.86,
+    "T_r_max": 43.506,
+    "net_biomass_g": 5.993,
+    "hours": 744
+   },
+   {
+    "month": 8,
+    "T": 33.284,
+    "RH": 61.561,
+    "dT_psy": 6.584,
+    "condensate_L": 1116.0,
+    "overflow_L": 984.877,
+    "media_evap_L": 984.877,
+    "dT_cond_active": 1.178,
+    "hvac_saving_kWh": 19.392,
+    "fan_kWh": 10.084,
+    "pbr_kWh": 5.251,
+    "ctrl_kWh": 1.86,
+    "T_r_max": 44.626,
+    "net_biomass_g": 4.922,
+    "hours": 744
+   },
+   {
+    "month": 9,
+    "T": 31.984,
+    "RH": 69.951,
+    "dT_psy": 4.966,
+    "condensate_L": 1080.0,
+    "overflow_L": 953.355,
+    "media_evap_L": 835.323,
+    "dT_cond_active": 1.06,
+    "hvac_saving_kWh": 16.081,
+    "fan_kWh": 9.279,
+    "pbr_kWh": 5.081,
+    "ctrl_kWh": 1.8,
+    "T_r_max": 45.962,
+    "net_biomass_g": 3.854,
+    "hours": 720
+   },
+   {
+    "month": 10,
+    "T": 30.38,
+    "RH": 69.677,
+    "dT_psy": 4.952,
+    "condensate_L": 1116.0,
+    "overflow_L": 984.61,
+    "media_evap_L": 793.385,
+    "dT_cond_active": 1.025,
+    "hvac_saving_kWh": 14.791,
+    "fan_kWh": 8.976,
+    "pbr_kWh": 5.251,
+    "ctrl_kWh": 1.86,
+    "T_r_max": 48.009,
+    "net_biomass_g": 3.809,
+    "hours": 744
+   },
+   {
+    "month": 11,
+    "T": 27.723,
+    "RH": 68.145,
+    "dT_psy": 4.869,
+    "condensate_L": 1080.0,
+    "overflow_L": 953.066,
+    "media_evap_L": 785.731,
+    "dT_cond_active": 1.183,
+    "hvac_saving_kWh": 13.405,
+    "fan_kWh": 7.705,
+    "pbr_kWh": 5.081,
+    "ctrl_kWh": 1.8,
+    "T_r_max": 46.662,
+    "net_biomass_g": 4.015,
+    "hours": 720
+   },
+   {
+    "month": 12,
+    "T": 25.238,
+    "RH": 65.951,
+    "dT_psy": 4.917,
+    "condensate_L": 1116.0,
+    "overflow_L": 985.173,
+    "media_evap_L": 803.455,
+    "dT_cond_active": 1.324,
+    "hvac_saving_kWh": 12.622,
+    "fan_kWh": 7.014,
+    "pbr_kWh": 5.251,
+    "ctrl_kWh": 1.86,
+    "T_r_max": 44.459,
+    "net_biomass_g": 6.381,
+    "hours": 744
+   }
+  ]
+ },
+ "Ref, summer (Jun-Aug)": {
+  "days": 92.0,
+  "condensate_L": 4760.372228016792,
+  "condensate_to_reactor_L": 388.91775248210666,
+  "reactor_demand_L": 388.91775248210666,
+  "external_L": 0.0,
+  "coverage_pct": 100.0,
+  "overflow_L": 4353.454475534685,
+  "media_evap_L": 4248.755826628262,
+  "media_drain_L": 104.69864890642421,
+  "spill_L": 0.0,
+  "mean_T_cond_before": 32.662457880434786,
+  "mean_T_cond_after": 30.948200143402282,
+  "mean_dT_cond_active": 1.7142577370325007,
+  "hvac_before_kWh": 3230.132073892577,
+  "hvac_gross_saving_kWh": 84.16073934287851,
+  "hvac_saving_carnot_kWh": 144.22134268684084,
+  "fan_penalty_kWh": 29.223209568943837,
+  "hvac_net_saving_kWh": 54.93752977393468,
+  "pbr_only_kWh": 15.582171428571428,
+  "control_kWh": 5.52,
+  "pbr_kWh": 21.102171428571427,
+  "net_electricity_kWh": 33.83535834536325,
+  "biomass_produced_g": 16.727521193683657,
+  "biomass_harvested_g": 21.66138374776705,
+  "vol_productivity_g_L_d": 0.009091044127001987,
+  "areal_productivity_g_m2_d": 0.3636417650800795,
+  "co2_supplied_g": 393.1631703677595,
+  "co2_transferable_g": 137.60710962871582,
+  "co2_gross_uptake_g": 51.44433380528745,
+  "co2_carbon_method_g": 30.64530348067705,
+  "co2_stoich_method_g": 31.447739844125273,
+  "co2_diff_pct": 2.551650348882307,
+  "o2_stoich_g": 31.013008708995233,
+  "o2_pq_g": 30.302898322015906,
+  "o2_diff_pct": 2.2897178201654507,
+  "o2_L": 24.35632617200929,
+  "cue_pct": 7.794550911778396,
+  "carbon_in_biomass_g": 8.363760596841828,
+  "net_electricity_co2_kg": 19.21848354016632,
+  "bg11_chem_g": 655.4904591999998,
+  "cooling_L": 0.0,
+  "net_SAR": 10.827314670516241,
+  "elec_SAR": 17.580009527659097,
+  "opex_SAR": 6.752694857142857,
+  "allowable_capex": 54.13657335258121,
+  "bio_limit": "Temperature Limited",
+  "bio_share": 0.48694942903752036,
+  "bio_shares": {
+   "Temperature": 0.48694942903752036,
+   "Carbon": 0.399673735725938,
+   "Light": 0.1133768352365416
+  },
+  "flags": [
+   [
+    "Evaporative Cooling Limited",
+    "water quantity limits the media in 83% of active hours"
+   ]
+  ],
+  "validation": [
+   {
+    "target": "T1 Condensate covers 100% of daily reactor need + 20% margin",
+    "status": "Pass",
+    "value": "100.0% of days meet it; overall coverage 100.0%",
+    "basis": "Simulated (Validation Target, not a guaranteed result)"
+   },
+   {
+    "target": "T2 Growth in conditioned condensate >= 80% of control",
+    "status": "Warning",
+    "value": "Not evaluable by simulation - requires the paired flask/panel experiment",
+    "basis": "Experiment required"
+   },
+   {
+    "target": "T3 Reactor temperature within 25-35 C for >= 90% of time",
+    "status": "Fail",
+    "value": "56.9% of hours (max 44.6 C)",
+    "basis": "Simulated with Low-confidence thermal inputs (alpha, U)"
+   },
+   {
+    "target": "T4a No persistent decline in algae density (model)",
+    "status": "Fail",
+    "value": "longest run of declining days = 11 (after a 14-day start-up)",
+    "basis": "Simulated"
+   },
+   {
+    "target": "T4b No visible contamination",
+    "status": "Warning",
+    "value": "Not evaluable by simulation - requires observation/microscopy",
+    "basis": "Experiment required"
+   }
+  ],
+  "health_counts": {
+   "Warning": 90,
+   "Critical": 2
+  },
+  "Tr_max": 44.62646275836306,
+  "Tr_in_range": 0.5688405797101449,
+  "X_end": 0.029944304281719757,
+  "X_mean": 0.05028708999652585,
+  "hyd": {
+   "Q_Lph": 68.30330565132695,
+   "static_bar": 0.0977723005,
+   "v_t": 4.428690551393267,
+   "h_net": 0.9871957650489294,
+   "v_o": 2.6841503022037716,
+   "h_loss": 0.01280423495107059
+  },
+  "mean_overflow_Lph": 2.067167367300421,
+  "conf": [
+   {
+    "output": "Condensate recovered",
+    "value": 4760.372,
+    "unit": "L",
+    "confidence": "Low",
+    "measure_first": "Outdoor-air fraction at coil inlet; Indoor (return) relative humidity; Load model: balance temperature (RTF = min_rtf); Load model: minimum runtime fraction"
+   },
+   {
+    "output": "Water used in reactor (from condensate)",
+    "value": 388.918,
+    "unit": "L",
+    "confidence": "Low",
+    "measure_first": "Outdoor-air fraction at coil inlet; Indoor (return) relative humidity; Load model: balance temperature (RTF = min_rtf); Load model: minimum runtime fraction"
+   },
+   {
+    "output": "Overflow reused for condenser cooling (evaporated)",
+    "value": 4248.756,
+    "unit": "L",
+    "confidence": "Low",
+    "measure_first": "Outdoor-air fraction at coil inlet; Indoor (return) relative humidity; Load model: balance temperature (RTF = min_rtf); Load model: minimum runtime fraction"
+   },
+   {
+    "output": "Biomass produced",
+    "value": 16.728,
+    "unit": "g",
+    "confidence": "Low",
+    "measure_first": "Biomass-specific light absorption coefficient; Fraction of photons above the validated PPFD credited to growth; Panel solar absorptance (thermal); Heat-loss coefficient per face"
+   },
+   {
+    "output": "Gross Biological CO2 Fixation",
+    "value": 30.645,
+    "unit": "g CO2",
+    "confidence": "Low",
+    "measure_first": "Biomass-specific light absorption coefficient; Fraction of photons above the validated PPFD credited to growth; Panel solar absorptance (thermal); Heat-loss coefficient per face"
+   },
+   {
+    "output": "Gross O2 produced (stoichiometric)",
+    "value": 31.013,
+    "unit": "g O2",
+    "confidence": "Low",
+    "measure_first": "Biomass-specific light absorption coefficient; Fraction of photons above the validated PPFD credited to growth; Panel solar absorptance (thermal); Heat-loss coefficient per face"
+   },
+   {
+    "output": "Condenser inlet air drop (mean, AC on)",
+    "value": 1.714,
+    "unit": "K",
+    "confidence": "Low",
+    "measure_first": "Outdoor-air fraction at coil inlet; Indoor (return) relative humidity; Load model: balance temperature (RTF = min_rtf); Load model: minimum runtime fraction"
+   },
+   {
+    "output": "HVAC electricity saved (gross)",
+    "value": 84.161,
+    "unit": "kWh",
+    "confidence": "Low",
+    "measure_first": "Outdoor-air fraction at coil inlet; Indoor (return) relative humidity; Load model: balance temperature (RTF = min_rtf); Load model: minimum runtime fraction"
+   },
+   {
+    "output": "PBR + control electricity",
+    "value": 21.102,
+    "unit": "kWh",
+    "confidence": "Low",
+    "measure_first": "Small pump wire-to-water efficiency"
+   },
+   {
+    "output": "Net electricity impact",
+    "value": 33.835,
+    "unit": "kWh",
+    "confidence": "Low",
+    "measure_first": "Outdoor-air fraction at coil inlet; Indoor (return) relative humidity; Load model: balance temperature (RTF = min_rtf); Load model: minimum runtime fraction"
+   },
+   {
+    "output": "Net annual benefit",
+    "value": 10.827,
+    "unit": "SAR/yr",
+    "confidence": "Low",
+    "measure_first": "Outdoor-air fraction at coil inlet; Indoor (return) relative humidity; Load model: balance temperature (RTF = min_rtf); Load model: minimum runtime fraction"
+   },
+   {
+    "output": "Net Carbon Impact",
+    "value": null,
+    "unit": "kg CO2e",
+    "confidence": "Not Yet Quantified",
+    "measure_first": "embodied carbon of equipment, nutrients, maintenance, lifetime"
+   }
+  ],
+  "monthly": [
+   {
+    "month": 6,
+    "T": 31.597,
+    "RH": 61.589,
+    "dT_psy": 6.511,
+    "condensate_L": 1466.405,
+    "overflow_L": 1321.921,
+    "media_evap_L": 1248.153,
+    "dT_cond_active": 1.596,
+    "hvac_saving_kWh": 24.197,
+    "fan_kWh": 9.136,
+    "pbr_kWh": 5.081,
+    "ctrl_kWh": 1.8,
+    "T_r_max": 42.423,
+    "net_biomass_g": 5.812,
+    "hours": 720
+   },
+   {
+    "month": 7,
+    "T": 33.072,
+    "RH": 55.941,
+    "dT_psy": 7.701,
+    "condensate_L": 1584.653,
+    "overflow_L": 1453.342,
+    "media_evap_L": 1453.342,
+    "dT_cond_active": 1.73,
+    "hvac_saving_kWh": 28.994,
+    "fan_kWh": 10.003,
+    "pbr_kWh": 5.251,
+    "ctrl_kWh": 1.86,
+    "T_r_max": 43.506,
+    "net_biomass_g": 5.993,
+    "hours": 744
+   },
+   {
+    "month": 8,
+    "T": 33.284,
+    "RH": 61.561,
+    "dT_psy": 6.584,
+    "condensate_L": 1709.314,
+    "overflow_L": 1578.191,
+    "media_evap_L": 1547.261,
+    "dT_cond_active": 1.813,
+    "hvac_saving_kWh": 30.969,
+    "fan_kWh": 10.084,
+    "pbr_kWh": 5.251,
+    "ctrl_kWh": 1.86,
+    "T_r_max": 44.626,
+    "net_biomass_g": 4.922,
+    "hours": 744
+   }
+  ]
+ },
+ "Ref, winter (Dec-Feb)": {
+  "days": 90.0,
+  "condensate_L": 2483.011419336354,
+  "condensate_to_reactor_L": 379.21361481974753,
+  "reactor_demand_L": 379.21361481974753,
+  "external_L": 0.0,
+  "coverage_pct": 100.0,
+  "overflow_L": 2085.7978045166046,
+  "media_evap_L": 1997.0256144887871,
+  "media_drain_L": 88.7721900278176,
+  "spill_L": 0.0,
+  "mean_T_cond_before": 24.235144444444444,
+  "mean_T_cond_after": 23.042458050988913,
+  "mean_dT_cond_active": 1.192686393455531,
+  "hvac_before_kWh": 1666.9808579258597,
+  "hvac_gross_saving_kWh": 30.58701664572277,
+  "hvac_saving_carnot_kWh": 66.50090840905347,
+  "fan_penalty_kWh": 19.251885143542395,
+  "hvac_net_saving_kWh": 11.335131502180374,
+  "pbr_only_kWh": 15.243428571428568,
+  "control_kWh": 5.4,
+  "pbr_kWh": 20.64342857142857,
+  "net_electricity_kWh": -9.308297069248194,
+  "biomass_produced_g": 19.380646826062485,
+  "biomass_harvested_g": 23.83561407139349,
+  "vol_productivity_g_L_d": 0.010767026014479158,
+  "areal_productivity_g_m2_d": 0.43068104057916634,
+  "co2_supplied_g": 391.95167198548063,
+  "co2_transferable_g": 137.1830851949182,
+  "co2_gross_uptake_g": 58.05155992954394,
+  "co2_carbon_method_g": 35.50590650937407,
+  "co2_stoich_method_g": 36.435616032997466,
+  "co2_diff_pct": 2.5516503488822977,
+  "o2_stoich_g": 35.93193288134019,
+  "o2_pq_g": 35.10919301102625,
+  "o2_diff_pct": 2.2897178201654595,
+  "o2_L": 27.44179759495929,
+  "cue_pct": 9.058746025884881,
+  "carbon_in_biomass_g": 9.690323413031242,
+  "net_electricity_co2_kg": -5.287112735332974,
+  "bg11_chem_g": 641.9751919999999,
+  "cooling_L": 0.0,
+  "net_SAR": -2.978655062159422,
+  "elec_SAR": 3.62724208069772,
+  "opex_SAR": 6.605897142857142,
+  "allowable_capex": 0.0,
+  "bio_limit": "Carbon Limited",
+  "bio_share": 0.9278242677824268,
+  "bio_shares": {
+   "Carbon": 0.9278242677824268,
+   "Max growth rate": 0.04288702928870293,
+   "Temperature": 0.029288702928870293
+  },
+  "flags": [
+   [
+    "Evaporative Cooling Limited",
+    "water quantity limits the media in 74% of active hours"
+   ],
+   [
+    "Energy Limited",
+    "net electricity impact -9 kWh (system uses more than it saves)"
+   ],
+   [
+    "Cost Limited",
+    "net annual benefit -3 SAR <= 0"
+   ]
+  ],
+  "validation": [
+   {
+    "target": "T1 Condensate covers 100% of daily reactor need + 20% margin",
+    "status": "Pass",
+    "value": "100.0% of days meet it; overall coverage 100.0%",
+    "basis": "Simulated (Validation Target, not a guaranteed result)"
+   },
+   {
+    "target": "T2 Growth in conditioned condensate >= 80% of control",
+    "status": "Warning",
+    "value": "Not evaluable by simulation - requires the paired flask/panel experiment",
+    "basis": "Experiment required"
+   },
+   {
+    "target": "T3 Reactor temperature within 25-35 C for >= 90% of time",
+    "status": "Fail",
+    "value": "26.4% of hours (max 44.5 C)",
+    "basis": "Simulated with Low-confidence thermal inputs (alpha, U)"
+   },
+   {
+    "target": "T4a No persistent decline in algae density (model)",
+    "status": "Pass",
+    "value": "longest run of declining days = 5 (after a 14-day start-up)",
+    "basis": "Simulated"
+   },
+   {
+    "target": "T4b No visible contamination",
+    "status": "Warning",
+    "value": "Not evaluable by simulation - requires observation/microscopy",
+    "basis": "Experiment required"
+   }
+  ],
+  "health_counts": {
+   "Warning": 84,
+   "Critical": 6
+  },
+  "Tr_max": 44.459215080462144,
+  "Tr_in_range": 0.26435185185185184,
+  "X_end": 0.05191416622868063,
+  "X_mean": 0.0557420115962119,
+  "hyd": {
+   "Q_Lph": 68.30330565132695,
+   "static_bar": 0.0977723005,
+   "v_t": 4.428690551393267,
+   "h_net": 0.9871957650489294,
+   "v_o": 2.6841503022037716,
+   "h_loss": 0.01280423495107059
+  },
+  "mean_overflow_Lph": 1.093758680921135,
+  "conf": [
+   {
+    "output": "Condensate recovered",
+    "value": 2483.011,
+    "unit": "L",
+    "confidence": "Low",
+    "measure_first": "Outdoor-air fraction at coil inlet; Indoor (return) relative humidity; Load model: balance temperature (RTF = min_rtf); Load model: minimum runtime fraction"
+   },
+   {
+    "output": "Water used in reactor (from condensate)",
+    "value": 379.214,
+    "unit": "L",
+    "confidence": "Low",
+    "measure_first": "Outdoor-air fraction at coil inlet; Indoor (return) relative humidity; Load model: balance temperature (RTF = min_rtf); Load model: minimum runtime fraction"
+   },
+   {
+    "output": "Overflow reused for condenser cooling (evaporated)",
+    "value": 1997.026,
+    "unit": "L",
+    "confidence": "Low",
+    "measure_first": "Outdoor-air fraction at coil inlet; Indoor (return) relative humidity; Load model: balance temperature (RTF = min_rtf); Load model: minimum runtime fraction"
+   },
+   {
+    "output": "Biomass produced",
+    "value": 19.381,
+    "unit": "g",
+    "confidence": "Low",
+    "measure_first": "Biomass-specific light absorption coefficient; Fraction of photons above the validated PPFD credited to growth; Panel solar absorptance (thermal); Heat-loss coefficient per face"
+   },
+   {
+    "output": "Gross Biological CO2 Fixation",
+    "value": 35.506,
+    "unit": "g CO2",
+    "confidence": "Low",
+    "measure_first": "Biomass-specific light absorption coefficient; Fraction of photons above the validated PPFD credited to growth; Panel solar absorptance (thermal); Heat-loss coefficient per face"
+   },
+   {
+    "output": "Gross O2 produced (stoichiometric)",
+    "value": 35.932,
+    "unit": "g O2",
+    "confidence": "Low",
+    "measure_first": "Biomass-specific light absorption coefficient; Fraction of photons above the validated PPFD credited to growth; Panel solar absorptance (thermal); Heat-loss coefficient per face"
+   },
+   {
+    "output": "Condenser inlet air drop (mean, AC on)",
+    "value": 1.193,
+    "unit": "K",
+    "confidence": "Low",
+    "measure_first": "Outdoor-air fraction at coil inlet; Indoor (return) relative humidity; Load model: balance temperature (RTF = min_rtf); Load model: minimum runtime fraction"
+   },
+   {
+    "output": "HVAC electricity saved (gross)",
+    "value": 30.587,
+    "unit": "kWh",
+    "confidence": "Low",
+    "measure_first": "Outdoor-air fraction at coil inlet; Indoor (return) relative humidity; Load model: balance temperature (RTF = min_rtf); Load model: minimum runtime fraction"
+   },
+   {
+    "output": "PBR + control electricity",
+    "value": 20.643,
+    "unit": "kWh",
+    "confidence": "Low",
+    "measure_first": "Small pump wire-to-water efficiency"
+   },
+   {
+    "output": "Net electricity impact",
+    "value": -9.308,
+    "unit": "kWh",
+    "confidence": "Low",
+    "measure_first": "Outdoor-air fraction at coil inlet; Indoor (return) relative humidity; Load model: balance temperature (RTF = min_rtf); Load model: minimum runtime fraction"
+   },
+   {
+    "output": "Net annual benefit",
+    "value": -2.979,
+    "unit": "SAR/yr",
+    "confidence": "Low",
+    "measure_first": "Outdoor-air fraction at coil inlet; Indoor (return) relative humidity; Load model: balance temperature (RTF = min_rtf); Load model: minimum runtime fraction"
+   },
+   {
+    "output": "Net Carbon Impact",
+    "value": null,
+    "unit": "kg CO2e",
+    "confidence": "Not Yet Quantified",
+    "measure_first": "embodied carbon of equipment, nutrients, maintenance, lifetime"
+   }
+  ],
+  "monthly": [
+   {
+    "month": 12,
+    "T": 25.238,
+    "RH": 65.951,
+    "dT_psy": 4.917,
+    "condensate_L": 966.679,
+    "overflow_L": 817.855,
+    "media_evap_L": 761.753,
+    "dT_cond_active": 1.243,
+    "hvac_saving_kWh": 12.065,
+    "fan_kWh": 7.014,
+    "pbr_kWh": 5.251,
+    "ctrl_kWh": 1.86,
+    "T_r_max": 44.459,
+    "net_biomass_g": 4.594,
+    "hours": 744
+   },
+   {
+    "month": 1,
+    "T": 23.438,
+    "RH": 62.869,
+    "dT_psy": 5.153,
+    "condensate_L": 773.496,
+    "overflow_L": 642.973,
+    "media_evap_L": 632.085,
+    "dT_cond_active": 1.157,
+    "hvac_saving_kWh": 9.35,
+    "fan_kWh": 6.327,
+    "pbr_kWh": 5.251,
+    "ctrl_kWh": 1.86,
+    "T_r_max": 42.273,
+    "net_biomass_g": 7.061,
+    "hours": 744
+   },
+   {
+    "month": 2,
+    "T": 24.008,
+    "RH": 63.215,
+    "dT_psy": 5.215,
+    "condensate_L": 742.836,
+    "overflow_L": 624.969,
+    "media_evap_L": 603.187,
+    "dT_cond_active": 1.176,
+    "hvac_saving_kWh": 9.172,
+    "fan_kWh": 5.911,
+    "pbr_kWh": 4.742,
+    "ctrl_kWh": 1.68,
+    "T_r_max": 42.071,
+    "net_biomass_g": 7.726,
+    "hours": 672
+   }
+  ]
+ },
+ "sens_rank": {
+  "net_benefit_SAR": [
+   {
+    "label": "Media face velocity (pressure drop)",
+    "low": 1.0,
+    "high": 3.0,
+    "at_low": 32.810975449276086,
+    "at_high": -79.27909674299148,
+    "base": 15.296901669234277,
+    "swing": 112.09007219226757
+   },
+   {
+    "label": "Condensate rate (x)",
+    "low": 0.5,
+    "high": 1.5,
+    "at_low": -23.823708439957347,
+    "at_high": 47.50462228613068,
+    "base": 15.296901669234277,
+    "swing": 71.32833072608803
+   },
+   {
+    "label": "Condenser air flow (cfm/TR)",
+    "low": 800.0,
+    "high": 1200.0,
+    "at_low": 36.29343648220478,
+    "at_high": -1.85458107562091,
+    "base": 15.296901669234277,
+    "swing": 38.148017557825696
+   },
+   {
+    "label": "AC operating hours (end hour, start 0)",
+    "low": 12.0,
+    "high": 24.0,
+    "at_low": -13.840980198611415,
+    "at_high": 15.296901669234277,
+    "base": 15.296901669234277,
+    "swing": 29.137881867845692
+   },
+   {
+    "label": "Outdoor air temperature (+/- 2 C)",
+    "low": -2.0,
+    "high": 2.0,
+    "at_low": 2.8181539116989356,
+    "at_high": 30.184550477666168,
+    "base": 15.296901669234277,
+    "swing": 27.366396565967232
+   },
+   {
+    "label": "Reactor volume (panel width, m)",
+    "low": 0.25,
+    "high": 1.0,
+    "at_low": 22.538507390101543,
+    "at_high": 1.3470098550876628,
+    "base": 15.296901669234277,
+    "swing": 21.19149753501388
+   },
+   {
+    "label": "Optical path length (m)",
+    "low": 0.02,
+    "high": 0.06,
+    "at_low": 22.53178386114198,
+    "at_high": 8.263335291441201,
+    "base": 15.296901669234277,
+    "swing": 14.26844856970078
+   },
+   {
+    "label": "Aeration rate (vvm)",
+    "low": 0.1,
+    "high": 0.5,
+    "at_low": 18.30426586501543,
+    "at_high": 6.296001908356509,
+    "base": 15.296901669234277,
+    "swing": 12.008263956658922
+   },
+   {
+    "label": "Pump efficiency (pump consumption)",
+    "low": 0.15,
+    "high": 0.4,
+    "at_low": 6.4732922724342785,
+    "at_high": 15.296901669234277,
+    "base": 15.296901669234277,
+    "swing": 8.823609396799998
+   },
+   {
+    "label": "Electricity tariff (SAR/kWh)",
+    "low": 0.18,
+    "high": 0.32,
+    "at_low": 8.604507188944279,
+    "at_high": 15.296901669234277,
+    "base": 15.296901669234277,
+    "swing": 6.692394480289998
+   },
+   {
+    "label": "Media effectiveness",
+    "low": 0.43,
+    "high": 0.74,
+    "at_low": 11.987206458936331,
+    "at_high": 17.662415062939754,
+    "base": 15.296901669234277,
+    "swing": 5.675208604003423
+   },
+   {
+    "label": "Outdoor RH (+/- 10 pts)",
+    "low": -10.0,
+    "high": 10.0,
+    "at_low": 10.310637064179527,
+    "at_high": 8.983081337170798,
+    "base": 15.296901669234277,
+    "swing": 1.327555727008729
+   },
+   {
+    "label": "Reactor heat loss U (reactor temperature)",
+    "low": 8.0,
+    "high": 25.0,
+    "at_low": 15.197018761283605,
+    "at_high": 15.34120025136718,
+    "base": 15.296901669234277,
+    "swing": 0.14418149008357517
+   },
+   {
+    "label": "Light intensity (x)",
+    "low": 0.7,
+    "high": 1.3,
+    "at_low": 15.296901669234277,
+    "at_high": 15.296901669234277,
+    "base": 15.296901669234277,
+    "swing": 0.0
+   },
+   {
+    "label": "CO2 transfer efficiency",
+    "low": 0.15,
+    "high": 0.6,
+    "at_low": 15.296901669234277,
+    "at_high": 15.296901669234277,
+    "base": 15.296901669234277,
+    "swing": 0.0
+   },
+   {
+    "label": "Nutrient dosing (x BG-11)",
+    "low": 0.5,
+    "high": 2.0,
+    "at_low": 15.296901669234277,
+    "at_high": 15.296901669234277,
+    "base": 15.296901669234277,
+    "swing": 0.0
+   },
+   {
+    "label": "Orifice diameter (m)",
+    "low": 0.002,
+    "high": 0.005,
+    "at_low": 15.296901669234277,
+    "at_high": 15.296901669234277,
+    "base": 15.296901669234277,
+    "swing": 0.0
+   },
+   {
+    "label": "Overflow head (m)",
+    "low": 0.3,
+    "high": 2.0,
+    "at_low": 15.296901669234277,
+    "at_high": 15.296901669234277,
+    "base": 15.296901669234277,
+    "swing": 0.0
+   }
+  ],
+  "biomass_kg": [
+   {
+    "label": "Aeration rate (vvm)",
+    "low": 0.1,
+    "high": 0.5,
+    "at_low": 0.03506787063522003,
+    "at_high": 0.18611629648933317,
+    "base": 0.07269856529573228,
+    "swing": 0.15104842585411316
+   },
+   {
+    "label": "Reactor volume (panel width, m)",
+    "low": 0.25,
+    "high": 1.0,
+    "at_low": 0.036470460743369223,
+    "at_high": 0.14513865315705154,
+    "base": 0.07269856529573228,
+    "swing": 0.10866819241368232
+   },
+   {
+    "label": "CO2 transfer efficiency",
+    "low": 0.15,
+    "high": 0.6,
+    "at_low": 0.03055363713657904,
+    "at_high": 0.12285996249751352,
+    "base": 0.07269856529573228,
+    "swing": 0.09230632536093447
+   },
+   {
+    "label": "Optical path length (m)",
+    "low": 0.02,
+    "high": 0.06,
+    "at_low": 0.03323480049643767,
+    "at_high": 0.11693091523196805,
+    "base": 0.07269856529573228,
+    "swing": 0.08369611473553037
+   },
+   {
+    "label": "Reactor heat loss U (reactor temperature)",
+    "low": 8.0,
+    "high": 25.0,
+    "at_low": 0.03856708298981057,
+    "at_high": 0.08994956038146727,
+    "base": 0.07269856529573228,
+    "swing": 0.0513824773916567
+   },
+   {
+    "label": "Outdoor air temperature (+/- 2 C)",
+    "low": -2.0,
+    "high": 2.0,
+    "at_low": 0.08594517840788898,
+    "at_high": 0.04937284779073881,
+    "base": 0.07269856529573228,
+    "swing": 0.03657233061715017
+   },
+   {
+    "label": "Light intensity (x)",
+    "low": 0.7,
+    "high": 1.3,
+    "at_low": 0.057606852497003744,
+    "at_high": 0.07735223462893469,
+    "base": 0.07269856529573228,
+    "swing": 0.019745382131930944
+   },
+   {
+    "label": "Outdoor RH (+/- 10 pts)",
+    "low": -10.0,
+    "high": 10.0,
+    "at_low": 0.07297735660086187,
+    "at_high": 0.07241287643288546,
+    "base": 0.07269856529573228,
+    "swing": 0.0005644801679764028
+   },
+   {
+    "label": "Condensate rate (x)",
+    "low": 0.5,
+    "high": 1.5,
+    "at_low": 0.07269856529573228,
+    "at_high": 0.07269856529573228,
+    "base": 0.07269856529573228,
+    "swing": 0.0
+   },
+   {
+    "label": "Nutrient dosing (x BG-11)",
+    "low": 0.5,
+    "high": 2.0,
+    "at_low": 0.07269856529573228,
+    "at_high": 0.07269856529573228,
+    "base": 0.07269856529573228,
+    "swing": 0.0
+   },
+   {
+    "label": "Pump efficiency (pump consumption)",
+    "low": 0.15,
+    "high": 0.4,
+    "at_low": 0.07269856529573228,
+    "at_high": 0.07269856529573228,
+    "base": 0.07269856529573228,
+    "swing": 0.0
+   },
+   {
+    "label": "Overflow head (m)",
+    "low": 0.3,
+    "high": 2.0,
+    "at_low": 0.07269856529573228,
+    "at_high": 0.07269856529573228,
+    "base": 0.07269856529573228,
+    "swing": 0.0
+   },
+   {
+    "label": "Orifice diameter (m)",
+    "low": 0.002,
+    "high": 0.005,
+    "at_low": 0.07269856529573228,
+    "at_high": 0.07269856529573228,
+    "base": 0.07269856529573228,
+    "swing": 0.0
+   },
+   {
+    "label": "Media effectiveness",
+    "low": 0.43,
+    "high": 0.74,
+    "at_low": 0.07269856529573228,
+    "at_high": 0.07269856529573228,
+    "base": 0.07269856529573228,
+    "swing": 0.0
+   },
+   {
+    "label": "Condenser air flow (cfm/TR)",
+    "low": 800.0,
+    "high": 1200.0,
+    "at_low": 0.07269856529573228,
+    "at_high": 0.07269856529573228,
+    "base": 0.07269856529573228,
+    "swing": 0.0
+   },
+   {
+    "label": "AC operating hours (end hour, start 0)",
+    "low": 12.0,
+    "high": 24.0,
+    "at_low": 0.07269856529573228,
+    "at_high": 0.07269856529573228,
+    "base": 0.07269856529573228,
+    "swing": 0.0
+   },
+   {
+    "label": "Media face velocity (pressure drop)",
+    "low": 1.0,
+    "high": 3.0,
+    "at_low": 0.07269856529573228,
+    "at_high": 0.07269856529573228,
+    "base": 0.07269856529573228,
+    "swing": 0.0
+   },
+   {
+    "label": "Electricity tariff (SAR/kWh)",
+    "low": 0.18,
+    "high": 0.32,
+    "at_low": 0.07269856529573228,
+    "at_high": 0.07269856529573228,
+    "base": 0.07269856529573228,
+    "swing": 0.0
+   }
+  ],
+  "net_energy_kWh": [
+   {
+    "label": "Media face velocity (pressure drop)",
+    "low": 1.0,
+    "high": 3.0,
+    "at_low": 102.53429827898776,
+    "at_high": -247.7471773218484,
+    "base": 47.802817716357104,
+    "swing": 350.2814756008362
+   },
+   {
+    "label": "Condensate rate (x)",
+    "low": 0.5,
+    "high": 1.5,
+    "at_low": -74.4490888748667,
+    "at_high": 148.45194464415837,
+    "base": 47.802817716357104,
+    "swing": 222.90103351902508
+   },
+   {
+    "label": "Condenser air flow (cfm/TR)",
+    "low": 800.0,
+    "high": 1200.0,
+    "at_low": 113.41698900688996,
+    "at_high": -5.795565861315346,
+    "base": 47.802817716357104,
+    "swing": 119.2125548682053
+   },
+   {
+    "label": "AC operating hours (end hour, start 0)",
+    "low": 12.0,
+    "high": 24.0,
+    "at_low": -43.25306312066068,
+    "at_high": 47.802817716357104,
+    "base": 47.802817716357104,
+    "swing": 91.05588083701778
+   },
+   {
+    "label": "Outdoor air temperature (+/- 2 C)",
+    "low": -2.0,
+    "high": 2.0,
+    "at_low": 8.806730974059171,
+    "at_high": 94.32672024270678,
+    "base": 47.802817716357104,
+    "swing": 85.5199892686476
+   },
+   {
+    "label": "Reactor volume (panel width, m)",
+    "low": 0.25,
+    "high": 1.0,
+    "at_low": 70.43283559406731,
+    "at_high": 4.209405797148939,
+    "base": 47.802817716357104,
+    "swing": 66.22342979691837
+   },
+   {
+    "label": "Optical path length (m)",
+    "low": 0.02,
+    "high": 0.06,
+    "at_low": 70.4118245660687,
+    "at_high": 25.822922785753754,
+    "base": 47.802817716357104,
+    "swing": 44.58890178031495
+   },
+   {
+    "label": "Aeration rate (vvm)",
+    "low": 0.1,
+    "high": 0.5,
+    "at_low": 57.20083082817322,
+    "at_high": 19.675005963614105,
+    "base": 47.802817716357104,
+    "swing": 37.52582486455911
+   },
+   {
+    "label": "Pump efficiency (pump consumption)",
+    "low": 0.15,
+    "high": 0.4,
+    "at_low": 20.22903835135711,
+    "at_high": 47.802817716357104,
+    "base": 47.802817716357104,
+    "swing": 27.573779364999993
+   },
+   {
+    "label": "Media effectiveness",
+    "low": 0.43,
+    "high": 0.74,
+    "at_low": 37.46002018417604,
+    "at_high": 55.19504707168672,
+    "base": 47.802817716357104,
+    "swing": 17.735026887510685
+   },
+   {
+    "label": "Outdoor RH (+/- 10 pts)",
+    "low": -10.0,
+    "high": 10.0,
+    "at_low": 32.220740825561016,
+    "at_high": 28.072129178658734,
+    "base": 47.802817716357104,
+    "swing": 4.148611646902282
+   },
+   {
+    "label": "Reactor heat loss U (reactor temperature)",
+    "low": 8.0,
+    "high": 25.0,
+    "at_low": 47.490683629011265,
+    "at_high": 47.941250785522435,
+    "base": 47.802817716357104,
+    "swing": 0.45056715651116974
+   },
+   {
+    "label": "Light intensity (x)",
+    "low": 0.7,
+    "high": 1.3,
+    "at_low": 47.802817716357104,
+    "at_high": 47.802817716357104,
+    "base": 47.802817716357104,
+    "swing": 0.0
+   },
+   {
+    "label": "Nutrient dosing (x BG-11)",
+    "low": 0.5,
+    "high": 2.0,
+    "at_low": 47.802817716357104,
+    "at_high": 47.802817716357104,
+    "base": 47.802817716357104,
+    "swing": 0.0
+   },
+   {
+    "label": "CO2 transfer efficiency",
+    "low": 0.15,
+    "high": 0.6,
+    "at_low": 47.802817716357104,
+    "at_high": 47.802817716357104,
+    "base": 47.802817716357104,
+    "swing": 0.0
+   },
+   {
+    "label": "Overflow head (m)",
+    "low": 0.3,
+    "high": 2.0,
+    "at_low": 47.802817716357104,
+    "at_high": 47.802817716357104,
+    "base": 47.802817716357104,
+    "swing": 0.0
+   },
+   {
+    "label": "Orifice diameter (m)",
+    "low": 0.002,
+    "high": 0.005,
+    "at_low": 47.802817716357104,
+    "at_high": 47.802817716357104,
+    "base": 47.802817716357104,
+    "swing": 0.0
+   },
+   {
+    "label": "Electricity tariff (SAR/kWh)",
+    "low": 0.18,
+    "high": 0.32,
+    "at_low": 47.802817716357104,
+    "at_high": 47.802817716357104,
+    "base": 47.802817716357104,
+    "swing": 0.0
+   }
+  ],
+  "payback_or_allowable_capex": [
+   {
+    "label": "Condensate rate (x)",
+    "low": 0.5,
+    "high": 1.5,
+    "at_low": 0.0,
+    "at_high": 237.52311143065342,
+    "base": 76.48450834617138,
+    "swing": 237.52311143065342
+   },
+   {
+    "label": "Condenser air flow (cfm/TR)",
+    "low": 800.0,
+    "high": 1200.0,
+    "at_low": 181.4671824110239,
+    "at_high": 0.0,
+    "base": 76.48450834617138,
+    "swing": 181.4671824110239
+   },
+   {
+    "label": "Media face velocity (pressure drop)",
+    "low": 1.0,
+    "high": 3.0,
+    "at_low": 164.05487724638044,
+    "at_high": 0.0,
+    "base": 76.48450834617138,
+    "swing": 164.05487724638044
+   },
+   {
+    "label": "Outdoor air temperature (+/- 2 C)",
+    "low": -2.0,
+    "high": 2.0,
+    "at_low": 14.090769558494678,
+    "at_high": 150.92275238833085,
+    "base": 76.48450834617138,
+    "swing": 136.83198282983616
+   },
+   {
+    "label": "Reactor volume (panel width, m)",
+    "low": 0.25,
+    "high": 1.0,
+    "at_low": 112.69253695050772,
+    "at_high": 6.735049275438314,
+    "base": 76.48450834617138,
+    "swing": 105.9574876750694
+   },
+   {
+    "label": "AC operating hours (end hour, start 0)",
+    "low": 12.0,
+    "high": 24.0,
+    "at_low": 0.0,
+    "at_high": 76.48450834617138,
+    "base": 76.48450834617138,
+    "swing": 76.48450834617138
+   },
+   {
+    "label": "Optical path length (m)",
+    "low": 0.02,
+    "high": 0.06,
+    "at_low": 112.6589193057099,
+    "at_high": 41.31667645720601,
+    "base": 76.48450834617138,
+    "swing": 71.3422428485039
+   },
+   {
+    "label": "Aeration rate (vvm)",
+    "low": 0.1,
+    "high": 0.5,
+    "at_low": 91.52132932507715,
+    "at_high": 31.480009541782543,
+    "base": 76.48450834617138,
+    "swing": 60.041319783294604
+   },
+   {
+    "label": "Pump efficiency (pump consumption)",
+    "low": 0.15,
+    "high": 0.4,
+    "at_low": 32.36646136217139,
+    "at_high": 76.48450834617138,
+    "base": 76.48450834617138,
+    "swing": 44.11804698399999
+   },
+   {
+    "label": "Electricity tariff (SAR/kWh)",
+    "low": 0.18,
+    "high": 0.32,
+    "at_low": 43.0225359447214,
+    "at_high": 76.48450834617138,
+    "base": 76.48450834617138,
+    "swing": 33.461972401449984
+   },
+   {
+    "label": "Media effectiveness",
+    "low": 0.43,
+    "high": 0.74,
+    "at_low": 59.93603229468165,
+    "at_high": 88.31207531469877,
+    "base": 76.48450834617138,
+    "swing": 28.37604302001712
+   },
+   {
+    "label": "Outdoor RH (+/- 10 pts)",
+    "low": -10.0,
+    "high": 10.0,
+    "at_low": 51.55318532089764,
+    "at_high": 44.915406685853995,
+    "base": 76.48450834617138,
+    "swing": 6.637778635043645
+   },
+   {
+    "label": "Reactor heat loss U (reactor temperature)",
+    "low": 8.0,
+    "high": 25.0,
+    "at_low": 75.98509380641802,
+    "at_high": 76.7060012568359,
+    "base": 76.48450834617138,
+    "swing": 0.720907450417883
+   },
+   {
+    "label": "Light intensity (x)",
+    "low": 0.7,
+    "high": 1.3,
+    "at_low": 76.48450834617138,
+    "at_high": 76.48450834617138,
+    "base": 76.48450834617138,
+    "swing": 0.0
+   },
+   {
+    "label": "CO2 transfer efficiency",
+    "low": 0.15,
+    "high": 0.6,
+    "at_low": 76.48450834617138,
+    "at_high": 76.48450834617138,
+    "base": 76.48450834617138,
+    "swing": 0.0
+   },
+   {
+    "label": "Nutrient dosing (x BG-11)",
+    "low": 0.5,
+    "high": 2.0,
+    "at_low": 76.48450834617138,
+    "at_high": 76.48450834617138,
+    "base": 76.48450834617138,
+    "swing": 0.0
+   },
+   {
+    "label": "Orifice diameter (m)",
+    "low": 0.002,
+    "high": 0.005,
+    "at_low": 76.48450834617138,
+    "at_high": 76.48450834617138,
+    "base": 76.48450834617138,
+    "swing": 0.0
+   },
+   {
+    "label": "Overflow head (m)",
+    "low": 0.3,
+    "high": 2.0,
+    "at_low": 76.48450834617138,
+    "at_high": 76.48450834617138,
+    "base": 76.48450834617138,
+    "swing": 0.0
+   }
+  ]
+ },
+ "comp": {
+  "mw_cmol": 23.385669999999998,
+  "cf_formula": 0.5136051265582727,
+  "cf_used": 0.5,
+  "n_frac": 0.06588521945276744,
+  "p_frac": 0.013244863200412904,
+  "gamma": 5.42,
+  "pq_stoich": 1.355,
+  "o2_g_per_g": 1.854011024700169,
+  "co2_g_per_g_cf": 1.8320289734410125
+ },
+ "climate": [
+  {
+   "month": 1,
+   "T_mean": 23.438,
+   "T_max": 28.8,
+   "RH_mean_%": 62.869,
+   "W_g_kg": 11.072,
+   "Twb_mean": 18.284,
+   "Wet-bulb depression_mean": 5.153,
+   "GHI_kWh_m2_day": 4.311,
+   "Facade_kWh_m2_day": 4.386
+  },
+  {
+   "month": 2,
+   "T_mean": 24.008,
+   "T_max": 29.8,
+   "RH_mean_%": 63.215,
+   "W_g_kg": 11.485,
+   "Twb_mean": 18.794,
+   "Wet-bulb depression_mean": 5.215,
+   "GHI_kWh_m2_day": 5.096,
+   "Facade_kWh_m2_day": 4.164
+  },
+  {
+   "month": 3,
+   "T_mean": 25.533,
+   "T_max": 31.7,
+   "RH_mean_%": 63.489,
+   "W_g_kg": 12.618,
+   "Twb_mean": 20.134,
+   "Wet-bulb depression_mean": 5.399,
+   "GHI_kWh_m2_day": 5.73,
+   "Facade_kWh_m2_day": 3.303
+  },
+  {
+   "month": 4,
+   "T_mean": 28.226,
+   "T_max": 34.5,
+   "RH_mean_%": 60.301,
+   "W_g_kg": 14.073,
+   "Twb_mean": 21.975,
+   "Wet-bulb depression_mean": 6.251,
+   "GHI_kWh_m2_day": 6.418,
+   "Facade_kWh_m2_day": 2.393
+  },
+  {
+   "month": 5,
+   "T_mean": 30.611,
+   "T_max": 37.1,
+   "RH_mean_%": 59.327,
+   "W_g_kg": 15.917,
+   "Twb_mean": 23.855,
+   "Wet-bulb depression_mean": 6.756,
+   "GHI_kWh_m2_day": 6.765,
+   "Facade_kWh_m2_day": 1.84
+  },
+  {
+   "month": 6,
+   "T_mean": 31.597,
+   "T_max": 38.3,
+   "RH_mean_%": 61.589,
+   "W_g_kg": 17.492,
+   "Twb_mean": 25.086,
+   "Wet-bulb depression_mean": 6.511,
+   "GHI_kWh_m2_day": 6.833,
+   "Facade_kWh_m2_day": 1.781
+  },
+  {
+   "month": 7,
+   "T_mean": 33.072,
+   "T_max": 39.4,
+   "RH_mean_%": 55.941,
+   "W_g_kg": 17.337,
+   "Twb_mean": 25.371,
+   "Wet-bulb depression_mean": 7.701,
+   "GHI_kWh_m2_day": 6.733,
+   "Facade_kWh_m2_day": 1.768
+  },
+  {
+   "month": 8,
+   "T_mean": 33.284,
+   "T_max": 38.7,
+   "RH_mean_%": 61.561,
+   "W_g_kg": 19.529,
+   "Twb_mean": 26.7,
+   "Wet-bulb depression_mean": 6.584,
+   "GHI_kWh_m2_day": 6.363,
+   "Facade_kWh_m2_day": 2.077
+  },
+  {
+   "month": 9,
+   "T_mean": 31.984,
+   "T_max": 37.4,
+   "RH_mean_%": 69.951,
+   "W_g_kg": 20.653,
+   "Twb_mean": 27.018,
+   "Wet-bulb depression_mean": 4.966,
+   "GHI_kWh_m2_day": 5.852,
+   "Facade_kWh_m2_day": 2.864
+  },
+  {
+   "month": 10,
+   "T_mean": 30.38,
+   "T_max": 36.6,
+   "RH_mean_%": 69.677,
+   "W_g_kg": 18.571,
+   "Twb_mean": 25.427,
+   "Wet-bulb depression_mean": 4.952,
+   "GHI_kWh_m2_day": 5.352,
+   "Facade_kWh_m2_day": 3.932
+  },
+  {
+   "month": 11,
+   "T_mean": 27.723,
+   "T_max": 33.3,
+   "RH_mean_%": 68.145,
+   "W_g_kg": 15.581,
+   "Twb_mean": 22.854,
+   "Wet-bulb depression_mean": 4.869,
+   "GHI_kWh_m2_day": 4.616,
+   "Facade_kWh_m2_day": 4.372
+  },
+  {
+   "month": 12,
+   "T_mean": 25.238,
+   "T_max": 30.6,
+   "RH_mean_%": 65.951,
+   "W_g_kg": 12.984,
+   "Twb_mean": 20.32,
+   "Wet-bulb depression_mean": 4.917,
+   "GHI_kWh_m2_day": 4.15,
+   "Facade_kWh_m2_day": 4.526
+  }
+ ]
+}
